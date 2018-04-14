@@ -1,6 +1,9 @@
 import Foundation
 
 
-class Player {
-    
+enum Player {
+    case yellow
+    case blue
+    case red
+    case green
 }

@@ -6,6 +6,10 @@ import ObjectMapper
 struct Table<T>: ImmutableMappable {
     private let values: [Country: [Int: Value<T>]]
     
+    var name: String {
+        return "TODO implement table name"
+    }
+    
     init(map: Map) throws {
         let status: [String: String] = try map.value("status")
         let values: [String: T] = try map.value("value")

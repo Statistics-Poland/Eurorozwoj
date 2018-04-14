@@ -32,6 +32,8 @@
 		34DC1B632081FD9C00AF0996 /* TextControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B622081FD9C00AF0996 /* TextControl.swift */; };
 		34DC1B652081FF7C00AF0996 /* UIColor+appColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B642081FF7C00AF0996 /* UIColor+appColor.swift */; };
 		34DC1B672081FFC000AF0996 /* UIFont+appFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B662081FFC000AF0996 /* UIFont+appFont.swift */; };
+		34DC1B69208202D500AF0996 /* FirstPhaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */; };
+		34DC1B6B2082074300AF0996 /* SecondPhaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */; };
 		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
 		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +82,8 @@
 		34DC1B622081FD9C00AF0996 /* TextControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextControl.swift; sourceTree = "<group>"; };
 		34DC1B642081FF7C00AF0996 /* UIColor+appColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+appColor.swift"; sourceTree = "<group>"; };
 		34DC1B662081FFC000AF0996 /* UIFont+appFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+appFont.swift"; sourceTree = "<group>"; };
+		34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPhaseHelper.swift; sourceTree = "<group>"; };
+		34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPhaseHelper.swift; sourceTree = "<group>"; };
 		489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				34DC1B562081FB2300AF0996 /* Game.swift */,
+				34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */,
+				34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */,
 				34DC1B582081FB3500AF0996 /* Player.swift */,
 				34DC1B5A2081FB4A00AF0996 /* Move.swift */,
 			);
@@ -464,6 +470,7 @@
 				34913BC1207F7FBB0031CD6F /* ApiService+euroData.swift in Sources */,
 				34DC1B652081FF7C00AF0996 /* UIColor+appColor.swift in Sources */,
 				34DC1B5E2081FBE500AF0996 /* BasicViews.swift in Sources */,
+				34DC1B69208202D500AF0996 /* FirstPhaseHelper.swift in Sources */,
 				34DC1B5B2081FB4A00AF0996 /* Move.swift in Sources */,
 				34913BCD207FA1370031CD6F /* Table.swift in Sources */,
 				34DC1B602081FC9F00AF0996 /* OpacityControl.swift in Sources */,
@@ -476,6 +483,7 @@
 				34913BCF207FA2610031CD6F /* Value.swift in Sources */,
 				346B2823207F6F23006F0B96 /* AppDelegate.swift in Sources */,
 				34913BC7207F97C10031CD6F /* TableConverter.swift in Sources */,
+				34DC1B6B2082074300AF0996 /* SecondPhaseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
