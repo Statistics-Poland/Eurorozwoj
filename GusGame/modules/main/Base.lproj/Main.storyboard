@@ -17,28 +17,27 @@
                     <view key="view" contentMode="scaleToFill" id="tRD-F4-2Je">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QIU-w5-PW2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.45735777358510243" blue="0.40190917208005317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QIU-w5-PW2" firstAttribute="width" secondItem="7Ih-TP-tWY" secondAttribute="width" id="J5C-Wg-Ppd"/>
+                            <constraint firstItem="QIU-w5-PW2" firstAttribute="height" secondItem="7Ih-TP-tWY" secondAttribute="height" id="fvh-gl-gtL"/>
+                            <constraint firstItem="QIU-w5-PW2" firstAttribute="centerX" secondItem="7Ih-TP-tWY" secondAttribute="centerX" id="iVk-dP-ceA"/>
+                            <constraint firstItem="QIU-w5-PW2" firstAttribute="centerY" secondItem="7Ih-TP-tWY" secondAttribute="centerY" id="k7T-bT-ska"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Ih-TP-tWY"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="QIU-w5-PW2" id="003-R5-0qh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="od9-Ca-anP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="180" y="-1609"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="tXr-a1-R10">
-            <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="GusGame" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
-                    <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>

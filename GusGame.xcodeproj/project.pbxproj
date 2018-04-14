@@ -35,6 +35,7 @@
 		34DC1B69208202D500AF0996 /* FirstPhaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */; };
 		34DC1B6B2082074300AF0996 /* SecondPhaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */; };
 		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
+		9E6F6A9E2082167100635874 /* float4x4 Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9D2082167100635874 /* float4x4 Extension.swift */; };
 		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		9E6F6A9D2082167100635874 /* float4x4 Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "float4x4 Extension.swift"; sourceTree = "<group>"; };
 		AF6F809B0B18D09B6BB90295 /* Pods-GusGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGame/Pods-GusGame.release.xcconfig"; sourceTree = "<group>"; };
 		D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,19 +136,14 @@
 		346B2821207F6F23006F0B96 /* GusGame */ = {
 			isa = PBXGroup;
 			children = (
-				34913BB7207F71970031CD6F /* api */,
-				34913BB6207F71960031CD6F /* common */,
-				34DC1B552081FAF500AF0996 /* gameLogic */,
 				34913BB5207F71960031CD6F /* modules */,
+				34913BB7207F71970031CD6F /* api */,
+				34DC1B552081FAF500AF0996 /* gameLogic */,
 				34DC1B4B2081F04200AF0996 /* translations */,
-				346B2824207F6F23006F0B96 /* art.scnassets */,
-				346B282B207F6F26006F0B96 /* Assets.xcassets */,
-				346B2826207F6F23006F0B96 /* ViewController.swift */,
-				34DC1B642081FF7C00AF0996 /* UIColor+appColor.swift */,
-				34DC1B662081FFC000AF0996 /* UIFont+appFont.swift */,
-				346B2822207F6F23006F0B96 /* AppDelegate.swift */,
-				346B282D207F6F26006F0B96 /* LaunchScreen.storyboard */,
-				346B2830207F6F26006F0B96 /* Info.plist */,
+				34913BB6207F71960031CD6F /* common */,
+				9E6F6A942082123F00635874 /* helpers */,
+				9E6F6A962082127400635874 /* 3dModels */,
+				9E6F6A952082125000635874 /* support files */,
 			);
 			path = GusGame;
 			sourceTree = "<group>";
@@ -164,6 +161,7 @@
 		34913BB5207F71960031CD6F /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				9E6F6A932082121600635874 /* home */,
 				34913BB8207F71D70031CD6F /* main */,
 			);
 			path = modules;
@@ -287,6 +285,67 @@
 				805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9E6F6A932082121600635874 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				346B2826207F6F23006F0B96 /* ViewController.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		9E6F6A942082123F00635874 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9E6F6A9C2082165A00635874 /* Extensions */,
+				9E6F6A9B2082165600635874 /* Font */,
+				9E6F6A9A2082164F00635874 /* Color */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		9E6F6A952082125000635874 /* support files */ = {
+			isa = PBXGroup;
+			children = (
+				346B282B207F6F26006F0B96 /* Assets.xcassets */,
+				346B2822207F6F23006F0B96 /* AppDelegate.swift */,
+				346B282D207F6F26006F0B96 /* LaunchScreen.storyboard */,
+				346B2830207F6F26006F0B96 /* Info.plist */,
+			);
+			path = "support files";
+			sourceTree = "<group>";
+		};
+		9E6F6A962082127400635874 /* 3dModels */ = {
+			isa = PBXGroup;
+			children = (
+				346B2824207F6F23006F0B96 /* art.scnassets */,
+			);
+			path = 3dModels;
+			sourceTree = "<group>";
+		};
+		9E6F6A9A2082164F00635874 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				34DC1B642081FF7C00AF0996 /* UIColor+appColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		9E6F6A9B2082165600635874 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				34DC1B662081FFC000AF0996 /* UIFont+appFont.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		9E6F6A9C2082165A00635874 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9E6F6A9D2082167100635874 /* float4x4 Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C5C1189BA0183E8ABF952EBA /* Frameworks */ = {
@@ -481,6 +540,7 @@
 				34DC1B572081FB2300AF0996 /* Game.swift in Sources */,
 				346B2827207F6F23006F0B96 /* ViewController.swift in Sources */,
 				34913BCF207FA2610031CD6F /* Value.swift in Sources */,
+				9E6F6A9E2082167100635874 /* float4x4 Extension.swift in Sources */,
 				346B2823207F6F23006F0B96 /* AppDelegate.swift in Sources */,
 				34913BC7207F97C10031CD6F /* TableConverter.swift in Sources */,
 				34DC1B6B2082074300AF0996 /* SecondPhaseHelper.swift in Sources */,
@@ -659,13 +719,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GU34X5QPPY;
-				INFOPLIST_FILE = GusGame/Info.plist;
+				DEVELOPMENT_TEAM = 775NKU5HEM;
+				INFOPLIST_FILE = "$(SRCROOT)/GusGame/support files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGame;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameMO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -678,13 +739,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GU34X5QPPY;
-				INFOPLIST_FILE = GusGame/Info.plist;
+				DEVELOPMENT_TEAM = 775NKU5HEM;
+				INFOPLIST_FILE = "$(SRCROOT)/GusGame/support files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGame;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameMO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
