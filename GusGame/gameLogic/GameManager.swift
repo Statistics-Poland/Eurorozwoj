@@ -15,7 +15,7 @@ protocol GameManagerDelegate: class {
 
 
 class GameManager {
-    private(set) let game: Game
+    let game: Game
     
     weak var delegate: GameManagerDelegate?
     
