@@ -1,0 +1,680 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		346B2823207F6F23006F0B96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B2822207F6F23006F0B96 /* AppDelegate.swift */; };
+		346B2825207F6F23006F0B96 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 346B2824207F6F23006F0B96 /* art.scnassets */; };
+		346B2827207F6F23006F0B96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B2826207F6F23006F0B96 /* ViewController.swift */; };
+		346B282A207F6F23006F0B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B2828207F6F23006F0B96 /* Main.storyboard */; };
+		346B282C207F6F26006F0B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346B282B207F6F26006F0B96 /* Assets.xcassets */; };
+		346B282F207F6F26006F0B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B282D207F6F26006F0B96 /* LaunchScreen.storyboard */; };
+		346B283A207F6F26006F0B96 /* GusGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B2839207F6F26006F0B96 /* GusGameTests.swift */; };
+		34913BBA207F71FE0031CD6F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BB9207F71FE0031CD6F /* MainViewController.swift */; };
+		34913BBD207F723D0031CD6F /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BBC207F723D0031CD6F /* BasicViewController.swift */; };
+		34913BBF207F759D0031CD6F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BBE207F759D0031CD6F /* ApiService.swift */; };
+		34913BC1207F7FBB0031CD6F /* ApiService+euroData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BC0207F7FBB0031CD6F /* ApiService+euroData.swift */; };
+		34913BC4207F88660031CD6F /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BC3207F88660031CD6F /* Country.swift */; };
+		34913BC7207F97C10031CD6F /* TableConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BC6207F97C10031CD6F /* TableConverter.swift */; };
+		34913BCB207F9EA50031CD6F /* TableConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCA207F9EA50031CD6F /* TableConverterTests.swift */; };
+		34913BCD207FA1370031CD6F /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCC207FA1370031CD6F /* Table.swift */; };
+		34913BCF207FA2610031CD6F /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCE207FA2610031CD6F /* Value.swift */; };
+		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
+		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		346B2836207F6F26006F0B96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 346B2817207F6F23006F0B96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 346B281E207F6F23006F0B96;
+			remoteInfo = GusGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		087F1F5C73D5BC50D7DB32BE /* Pods-GusGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GusGame/Pods-GusGame.debug.xcconfig"; sourceTree = "<group>"; };
+		346B281F207F6F23006F0B96 /* GusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		346B2822207F6F23006F0B96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		346B2824207F6F23006F0B96 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		346B2826207F6F23006F0B96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		346B2829207F6F23006F0B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		346B282B207F6F26006F0B96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		346B282E207F6F26006F0B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		346B2830207F6F26006F0B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		346B2835207F6F26006F0B96 /* GusGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GusGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		346B2839207F6F26006F0B96 /* GusGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GusGameTests.swift; sourceTree = "<group>"; };
+		346B283B207F6F26006F0B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34913BB9207F71FE0031CD6F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		34913BBC207F723D0031CD6F /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		34913BBE207F759D0031CD6F /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		34913BC0207F7FBB0031CD6F /* ApiService+euroData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiService+euroData.swift"; sourceTree = "<group>"; };
+		34913BC3207F88660031CD6F /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		34913BC6207F97C10031CD6F /* TableConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableConverter.swift; sourceTree = "<group>"; };
+		34913BCA207F9EA50031CD6F /* TableConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableConverterTests.swift; sourceTree = "<group>"; };
+		34913BCC207FA1370031CD6F /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		34913BCE207FA2610031CD6F /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF6F809B0B18D09B6BB90295 /* Pods-GusGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGame/Pods-GusGame.release.xcconfig"; sourceTree = "<group>"; };
+		D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		346B281C207F6F23006F0B96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		346B2832207F6F26006F0B96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		346B2816207F6F23006F0B96 = {
+			isa = PBXGroup;
+			children = (
+				346B2821207F6F23006F0B96 /* GusGame */,
+				346B2838207F6F26006F0B96 /* GusGameTests */,
+				346B2820207F6F23006F0B96 /* Products */,
+				62B2D09AE6D40ACFCDFE3D5D /* Pods */,
+				C5C1189BA0183E8ABF952EBA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		346B2820207F6F23006F0B96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				346B281F207F6F23006F0B96 /* GusGame.app */,
+				346B2835207F6F26006F0B96 /* GusGameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		346B2821207F6F23006F0B96 /* GusGame */ = {
+			isa = PBXGroup;
+			children = (
+				34913BB7207F71970031CD6F /* api */,
+				34913BB6207F71960031CD6F /* common */,
+				34913BB5207F71960031CD6F /* modules */,
+				346B2824207F6F23006F0B96 /* art.scnassets */,
+				346B282B207F6F26006F0B96 /* Assets.xcassets */,
+				346B2826207F6F23006F0B96 /* ViewController.swift */,
+				346B2822207F6F23006F0B96 /* AppDelegate.swift */,
+				346B282D207F6F26006F0B96 /* LaunchScreen.storyboard */,
+				346B2830207F6F26006F0B96 /* Info.plist */,
+			);
+			path = GusGame;
+			sourceTree = "<group>";
+		};
+		346B2838207F6F26006F0B96 /* GusGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				34913BC8207F9E3F0031CD6F /* common */,
+				346B2839207F6F26006F0B96 /* GusGameTests.swift */,
+				346B283B207F6F26006F0B96 /* Info.plist */,
+			);
+			path = GusGameTests;
+			sourceTree = "<group>";
+		};
+		34913BB5207F71960031CD6F /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				34913BB8207F71D70031CD6F /* main */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		34913BB6207F71960031CD6F /* common */ = {
+			isa = PBXGroup;
+			children = (
+				34913BC5207F979F0031CD6F /* algorithms */,
+				34913BBB207F722D0031CD6F /* controllers */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		34913BB7207F71970031CD6F /* api */ = {
+			isa = PBXGroup;
+			children = (
+				34913BBE207F759D0031CD6F /* ApiService.swift */,
+				34913BC0207F7FBB0031CD6F /* ApiService+euroData.swift */,
+				34913BC2207F88080031CD6F /* models */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		34913BB8207F71D70031CD6F /* main */ = {
+			isa = PBXGroup;
+			children = (
+				346B2828207F6F23006F0B96 /* Main.storyboard */,
+				34913BB9207F71FE0031CD6F /* MainViewController.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		34913BBB207F722D0031CD6F /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				34913BBC207F723D0031CD6F /* BasicViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		34913BC2207F88080031CD6F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				34913BC3207F88660031CD6F /* Country.swift */,
+				34913BCC207FA1370031CD6F /* Table.swift */,
+				34913BCE207FA2610031CD6F /* Value.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		34913BC5207F979F0031CD6F /* algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				34913BC6207F97C10031CD6F /* TableConverter.swift */,
+			);
+			path = algorithms;
+			sourceTree = "<group>";
+		};
+		34913BC8207F9E3F0031CD6F /* common */ = {
+			isa = PBXGroup;
+			children = (
+				34913BC9207F9E3F0031CD6F /* algorithms */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		34913BC9207F9E3F0031CD6F /* algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				34913BCA207F9EA50031CD6F /* TableConverterTests.swift */,
+			);
+			path = algorithms;
+			sourceTree = "<group>";
+		};
+		62B2D09AE6D40ACFCDFE3D5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				087F1F5C73D5BC50D7DB32BE /* Pods-GusGame.debug.xcconfig */,
+				AF6F809B0B18D09B6BB90295 /* Pods-GusGame.release.xcconfig */,
+				7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */,
+				805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C5C1189BA0183E8ABF952EBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */,
+				489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		346B281E207F6F23006F0B96 /* GusGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 346B283E207F6F26006F0B96 /* Build configuration list for PBXNativeTarget "GusGame" */;
+			buildPhases = (
+				DAA8CC82008CC7A0346225A9 /* [CP] Check Pods Manifest.lock */,
+				346B281B207F6F23006F0B96 /* Sources */,
+				346B281C207F6F23006F0B96 /* Frameworks */,
+				346B281D207F6F23006F0B96 /* Resources */,
+				B5B846836D42CEF44DFF8673 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GusGame;
+			productName = GusGame;
+			productReference = 346B281F207F6F23006F0B96 /* GusGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		346B2834207F6F26006F0B96 /* GusGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 346B2841207F6F26006F0B96 /* Build configuration list for PBXNativeTarget "GusGameTests" */;
+			buildPhases = (
+				D7DAD578071EA4AA3FDD4712 /* [CP] Check Pods Manifest.lock */,
+				346B2831207F6F26006F0B96 /* Sources */,
+				346B2832207F6F26006F0B96 /* Frameworks */,
+				346B2833207F6F26006F0B96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				346B2837207F6F26006F0B96 /* PBXTargetDependency */,
+			);
+			name = GusGameTests;
+			productName = GusGameTests;
+			productReference = 346B2835207F6F26006F0B96 /* GusGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		346B2817207F6F23006F0B96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Paweł Czerwiński";
+				TargetAttributes = {
+					346B281E207F6F23006F0B96 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					346B2834207F6F26006F0B96 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 346B281E207F6F23006F0B96;
+					};
+				};
+			};
+			buildConfigurationList = 346B281A207F6F23006F0B96 /* Build configuration list for PBXProject "GusGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 346B2816207F6F23006F0B96;
+			productRefGroup = 346B2820207F6F23006F0B96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				346B281E207F6F23006F0B96 /* GusGame */,
+				346B2834207F6F26006F0B96 /* GusGameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		346B281D207F6F23006F0B96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				346B2825207F6F23006F0B96 /* art.scnassets in Resources */,
+				346B282F207F6F26006F0B96 /* LaunchScreen.storyboard in Resources */,
+				346B282C207F6F26006F0B96 /* Assets.xcassets in Resources */,
+				346B282A207F6F23006F0B96 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		346B2833207F6F26006F0B96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5B846836D42CEF44DFF8673 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GusGame/Pods-GusGame-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GusGame/Pods-GusGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7DAD578071EA4AA3FDD4712 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GusGameTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAA8CC82008CC7A0346225A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GusGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		346B281B207F6F23006F0B96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34913BC4207F88660031CD6F /* Country.swift in Sources */,
+				34913BBA207F71FE0031CD6F /* MainViewController.swift in Sources */,
+				34913BC1207F7FBB0031CD6F /* ApiService+euroData.swift in Sources */,
+				34913BCD207FA1370031CD6F /* Table.swift in Sources */,
+				34913BBF207F759D0031CD6F /* ApiService.swift in Sources */,
+				34913BBD207F723D0031CD6F /* BasicViewController.swift in Sources */,
+				346B2827207F6F23006F0B96 /* ViewController.swift in Sources */,
+				34913BCF207FA2610031CD6F /* Value.swift in Sources */,
+				346B2823207F6F23006F0B96 /* AppDelegate.swift in Sources */,
+				34913BC7207F97C10031CD6F /* TableConverter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		346B2831207F6F26006F0B96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				346B283A207F6F26006F0B96 /* GusGameTests.swift in Sources */,
+				34913BCB207F9EA50031CD6F /* TableConverterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		346B2837207F6F26006F0B96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 346B281E207F6F23006F0B96 /* GusGame */;
+			targetProxy = 346B2836207F6F26006F0B96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		346B2828207F6F23006F0B96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				346B2829207F6F23006F0B96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		346B282D207F6F26006F0B96 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				346B282E207F6F26006F0B96 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		346B283C207F6F26006F0B96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		346B283D207F6F26006F0B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		346B283F207F6F26006F0B96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 087F1F5C73D5BC50D7DB32BE /* Pods-GusGame.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GU34X5QPPY;
+				INFOPLIST_FILE = GusGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		346B2840207F6F26006F0B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF6F809B0B18D09B6BB90295 /* Pods-GusGame.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GU34X5QPPY;
+				INFOPLIST_FILE = GusGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		346B2842207F6F26006F0B96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GU34X5QPPY;
+				INFOPLIST_FILE = GusGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GusGame.app/GusGame";
+			};
+			name = Debug;
+		};
+		346B2843207F6F26006F0B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GU34X5QPPY;
+				INFOPLIST_FILE = GusGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GusGame.app/GusGame";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		346B281A207F6F23006F0B96 /* Build configuration list for PBXProject "GusGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				346B283C207F6F26006F0B96 /* Debug */,
+				346B283D207F6F26006F0B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		346B283E207F6F26006F0B96 /* Build configuration list for PBXNativeTarget "GusGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				346B283F207F6F26006F0B96 /* Debug */,
+				346B2840207F6F26006F0B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		346B2841207F6F26006F0B96 /* Build configuration list for PBXNativeTarget "GusGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				346B2842207F6F26006F0B96 /* Debug */,
+				346B2843207F6F26006F0B96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 346B2817207F6F23006F0B96 /* Project object */;
+}
