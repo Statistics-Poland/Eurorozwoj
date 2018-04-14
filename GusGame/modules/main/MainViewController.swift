@@ -3,6 +3,10 @@ import SceneKit
 import ARKit
 import PromiseKit
 
+enum NodeNames: String {
+    case map = "EUMap"
+}
+
 class MainViewController: BasicViewController {
     
     
@@ -12,8 +16,9 @@ class MainViewController: BasicViewController {
         didSet {
         }
     }
-    private let addEUMapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addMapToSceneView(withGestureRecognizer:)))
-    private let selectCountryGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectCountry(_:)))
+    private var plane: SCNNode?
+    private var defaultTransform: SCNMatrix4?
+    private let moveBy: CGFloat = 0.8
     
     // MARK: - Outlets
     
@@ -21,7 +26,7 @@ class MainViewController: BasicViewController {
     
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // PAWEL GOWNO POBIERANIE DANYCH XD
@@ -37,6 +42,7 @@ class MainViewController: BasicViewController {
         // USUNAC DO PREZENTACJI !!!
         sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
+        sceneView.isUserInteractionEnabled = true
         addEUMapTapGestureToSceneView()
     }
     
@@ -64,7 +70,7 @@ class MainViewController: BasicViewController {
         let x = translation.x
         let y = translation.y
         let z = translation.z
-        let position = SCNVector3(x,y + 0.1,z)
+        let position = SCNVector3(x,y,z)
         addMap(at: position)
     }
     
@@ -76,47 +82,78 @@ class MainViewController: BasicViewController {
             guard let name: String = node.name else { return nil }
             return Country(code: name)
         }
-        for country: Country in countries {
-            print(country)
+        guard let country = countries.first else { return }
+        if defaultTransform == nil {
+            highlight(country: country)
+        } else {
+            dehighlight(country: country)
         }
     }
-
+    
     
     // MARK: - Helpers
-
+    
+    private func highlight(country: Country) {
+        guard let mapNode = sceneView.scene.rootNode.childNodes.first(where: { $0.name == NodeNames.map.rawValue }) else { return }
+        guard let countryNode = mapNode.childNodes.first(where: { $0.name == country.rawValue }) else { return }
+        defaultTransform = countryNode.transform
+        let action = SCNAction.customAction(duration: 0.3) { (countryNode, _) in
+            countryNode.transform = SCNMatrix4Scale(countryNode.transform, 1, 1.12, 1)
+        }
+        let moveActions = SCNAction.moveBy(x: 0.0, y: moveBy, z: 0, duration: 1)
+        let actions = SCNAction.group([action, moveActions])
+        countryNode.runAction(actions)
+    }
+    
+    private func dehighlight(country: Country) {
+        guard let mapNode = sceneView.scene.rootNode.childNodes.first(where: { $0.name == NodeNames.map.rawValue }) else { return }
+        guard let countryNode = mapNode.childNodes.first(where: { $0.name == country.rawValue }) else { return }
+        defaultTransform = countryNode.transform
+        let action = SCNAction.customAction(duration: 0.3) { (countryNode, _) in
+            countryNode.transform = SCNMatrix4Scale(countryNode.transform, 1, 0.889, 1)
+        }
+        let moveActions = SCNAction.moveBy(x: 0.0, y: -moveBy, z: 0, duration: 1)
+        let actions = SCNAction.group([action, moveActions])
+        countryNode.runAction(actions)
+        defaultTransform = nil
+    }
+    
     private func addMap(at position: SCNVector3) {
         guard self.mapNode == nil else { return }
         let scendeEU = SCNScene(named: "art.scnassets/EUMap.dae")!
         let nodesEU = scendeEU.rootNode.childNodes
         let nodeEUMap = SCNNode()
+        nodeEUMap.name = NodeNames.map.rawValue
         for nodeEU in nodesEU {
             nodeEUMap.addChildNode(nodeEU)
         }
-        nodeEUMap.transform = SCNMatrix4Scale(SCNMatrix4Identity, 0.1, 0.1, 0.1)
+        nodeEUMap.transform = SCNMatrix4Scale(SCNMatrix4Identity, 0.08, 0.08, 0.08)
         nodeEUMap.position = position
         self.mapNode = nodeEUMap
         sceneView.scene.rootNode.addChildNode(nodeEUMap)
-        sceneView.removeGestureRecognizer(addEUMapGestureRecognizer)
+        plane?.removeFromParentNode()
         addSelectCountryTapGestureToSceneView()
     }
     
     private func addPlane(at planeAnchor: ARPlaneAnchor, to node: SCNNode) {
-//        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
-        let plane = SCNPlane(width: CGFloat(0.5), height: CGFloat(0.5))
+        let plane = SCNPlane(width: CGFloat(1), height: CGFloat(1))
         let planeNode = SCNNode(geometry: plane)
         planeNode.simdPosition = float3(planeAnchor.center.x, 0, planeAnchor.center.z)
         planeNode.eulerAngles.x = -.pi / 2
         planeNode.opacity = 0.25
         node.addChildNode(planeNode)
+        self.plane = planeNode
     }
     
     // MARK: - Setup Gestures
     
     private func addEUMapTapGestureToSceneView() {
+        let addEUMapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addMapToSceneView(withGestureRecognizer:)))
         sceneView.addGestureRecognizer(addEUMapGestureRecognizer)
     }
     
     private func addSelectCountryTapGestureToSceneView() {
+        let selectCountryGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectCountry(_:)))
         sceneView.addGestureRecognizer(selectCountryGestrueRecognizer)
     }
 }
@@ -124,6 +161,7 @@ class MainViewController: BasicViewController {
 extension MainViewController: ARSCNViewDelegate  {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard plane == nil else { return }
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         guard mapNode == nil else { return }
         addPlane(at: planeAnchor, to: node)
