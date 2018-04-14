@@ -57,6 +57,6 @@ enum Country: String, Hashable, CustomStringConvertible {
     }
     
     var description: String {
-        return NSLocalizedString("country_\(self.rawValue)", comment: "country name")
+        return NSLocalizedString("country_\(self.rawValue)", tableName: "Localization", comment: "country name")
     }
 }

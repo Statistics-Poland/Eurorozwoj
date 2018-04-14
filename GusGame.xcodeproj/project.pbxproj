@@ -23,7 +23,7 @@
 		34913BCB207F9EA50031CD6F /* TableConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCA207F9EA50031CD6F /* TableConverterTests.swift */; };
 		34913BCD207FA1370031CD6F /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCC207FA1370031CD6F /* Table.swift */; };
 		34913BCF207FA2610031CD6F /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCE207FA2610031CD6F /* Value.swift */; };
-		34DC1B502081F0EA00AF0996 /* Countries.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DC1B522081F0EA00AF0996 /* Countries.strings */; };
+		34DC1B542081F8CA00AF0996 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DC1B522081F0EA00AF0996 /* Localization.strings */; };
 		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
 		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
 /* End PBXBuildFile section */
@@ -62,7 +62,8 @@
 		34913BCE207FA2610031CD6F /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
 		34DC1B4C2081F0C200AF0996 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		34DC1B4D2081F0C200AF0996 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		34DC1B512081F0EA00AF0996 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Countries.strings; sourceTree = "<group>"; };
+		34DC1B512081F0EA00AF0996 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localization.strings; sourceTree = "<group>"; };
+		34DC1B532081F82100AF0996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localization.strings; sourceTree = "<group>"; };
 		489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,7 +219,7 @@
 		34DC1B4B2081F04200AF0996 /* translations */ = {
 			isa = PBXGroup;
 			children = (
-				34DC1B522081F0EA00AF0996 /* Countries.strings */,
+				34DC1B522081F0EA00AF0996 /* Localization.strings */,
 			);
 			path = translations;
 			sourceTree = "<group>";
@@ -326,9 +327,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DC1B542081F8CA00AF0996 /* Localization.strings in Resources */,
 				346B2825207F6F23006F0B96 /* art.scnassets in Resources */,
 				346B282F207F6F26006F0B96 /* LaunchScreen.storyboard in Resources */,
-				34DC1B502081F0EA00AF0996 /* Countries.strings in Resources */,
 				346B282C207F6F26006F0B96 /* Assets.xcassets in Resources */,
 				346B282A207F6F23006F0B96 /* Main.storyboard in Resources */,
 			);
@@ -460,12 +461,13 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		34DC1B522081F0EA00AF0996 /* Countries.strings */ = {
+		34DC1B522081F0EA00AF0996 /* Localization.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				34DC1B512081F0EA00AF0996 /* pl */,
+				34DC1B532081F82100AF0996 /* Base */,
 			);
-			name = Countries.strings;
+			name = Localization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
