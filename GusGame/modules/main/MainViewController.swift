@@ -116,17 +116,36 @@ class MainViewController: BasicViewController {
         countryNode.geometry?.firstMaterial?.diffuse.contents = color
     }
     
-//
-//    private func addBarInfo(text: String, node: SCNNode, maxHeight: Float) {
-//        guard let mapNode = getMapNode() else { return }
-//        let labelNode = SKLabelNode(text: "Hello World")
-//        labelNode.fontSize = 20
-//        labelNode.fontName = "San Fransisco"
-//        labelNode.position = CGPoint(x: CGFloat(node.position.x), y: CGFloat(node.position.z))
-//        labelNode.zPosition = CGFloat(node.position.y + maxHeight)
-//        let node = SCNNode(geometry: labelNode)
-//        mapNode.addChildNode(node)
-//    }
+    private func removeBarInfos() {
+        guard let mapNode = getMapNode() else { return }
+        let hudNodes = mapNode.childNodes.filter({ $0.name == "HUD" })
+        hudNodes.forEach({ $0.removeFromParentNode()})
+    }
+    
+    private func addBarInfo(text: String, node: SCNNode, maxHeight: Float) {
+        guard let mapNode = getMapNode() else { return }
+        let labelNode = SKLabelNode(text: text)
+        labelNode.fontSize = 50
+        labelNode.fontName = "San Fransisco"
+        labelNode.position = CGPoint(x: 50, y: 50)
+
+        let skScene = SKScene(size: CGSize(width: 100, height: 100))
+        skScene.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
+        skScene.addChild(labelNode)
+        
+        let plane = SCNPlane(width: 0.5, height: 0.5)
+        let material = SCNMaterial()
+        material.lightingModel = SCNMaterial.LightingModel.constant
+        material.isDoubleSided = true
+        material.diffuse.contents = skScene
+        plane.materials = [material]
+        
+        let hudNode = SCNNode(geometry: plane)
+        hudNode.name = "HUD"
+        hudNode.position = SCNVector3(x: node.position.x, y: node.position.y + maxHeight, z: node.position.z)
+        hudNode.rotation = SCNVector4(x: 1, y: 0, z: 0, w: 3.14159265)
+        mapNode.addChildNode(hudNode)
+    }
     
     private func addBars(barNodes: [BarNodeType], to country: Country) {
         guard let countryNode = getNode(for: country) else { return }
@@ -149,12 +168,14 @@ class MainViewController: BasicViewController {
         boxNode.opacity = 1.0
         boxNode.position = position
         mapNode.addChildNode(boxNode)
+        addBarInfo(text: "hehe", node: boxNode, maxHeight: 2.4)
     }
     
     private func removeBars() {
         for bar in barNodeTypes {
             removeBar(barNode: bar)
         }
+        removeBarInfos()
         addSelectCountryTapGestureToSceneView()
     }
     
