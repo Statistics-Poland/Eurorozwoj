@@ -51,10 +51,10 @@ enum Country: String, Hashable, CustomStringConvertible {
     case unitedKingdom =        "UK"
     
     
-    
     init?(code: String) {
         self.init(rawValue: code.uppercased())
     }
+    
     
     var description: String {
         return NSLocalizedString("country_\(self.rawValue)", tableName: "Localization", comment: "country name")
