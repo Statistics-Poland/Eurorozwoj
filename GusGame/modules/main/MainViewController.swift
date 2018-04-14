@@ -26,7 +26,7 @@ class MainViewController: BasicViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var sceneView: MainView!
     
     
     // MARK: - Lifecycle
