@@ -34,6 +34,16 @@
 		34DC1B672081FFC000AF0996 /* UIFont+appFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B662081FFC000AF0996 /* UIFont+appFont.swift */; };
 		34DC1B69208202D500AF0996 /* FirstPhaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */; };
 		34DC1B6B2082074300AF0996 /* SecondPhaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */; };
+		34EC6E9020822CA500DF5087 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC6E8F20822CA500DF5087 /* Phase.swift */; };
+		34EC6E9220822CCA00DF5087 /* FindCountryPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC6E9120822CCA00DF5087 /* FindCountryPhase.swift */; };
+		34EC6E9420822E1C00DF5087 /* MutableGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC6E9320822E1C00DF5087 /* MutableGame.swift */; };
+		34EC6E9620822F3B00DF5087 /* PutWorkersPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC6E9520822F3B00DF5087 /* PutWorkersPhase.swift */; };
+		34EC6E98208231B700DF5087 /* QuestionPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC6E97208231B700DF5087 /* QuestionPhase.swift */; };
+		34EC6E9A2082336F00DF5087 /* NextPlayerPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC6E992082336F00DF5087 /* NextPlayerPhase.swift */; };
+		34F7101820823D890094EC9F /* EndTurnPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F7101720823D890094EC9F /* EndTurnPhase.swift */; };
+		34F7101A208240F40094EC9F /* EndGamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F71019208240F40094EC9F /* EndGamePhase.swift */; };
+		34F7101C208246090094EC9F /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F7101B208246080094EC9F /* QuestionData.swift */; };
+		34F7101E208249EC0094EC9F /* PresentDataPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F7101D208249EC0094EC9F /* PresentDataPhase.swift */; };
 		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
 		9E6F6A9E2082167100635874 /* float4x4 Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9D2082167100635874 /* float4x4 Extension.swift */; };
 		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
@@ -85,6 +95,16 @@
 		34DC1B662081FFC000AF0996 /* UIFont+appFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+appFont.swift"; sourceTree = "<group>"; };
 		34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPhaseHelper.swift; sourceTree = "<group>"; };
 		34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPhaseHelper.swift; sourceTree = "<group>"; };
+		34EC6E8F20822CA500DF5087 /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
+		34EC6E9120822CCA00DF5087 /* FindCountryPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCountryPhase.swift; sourceTree = "<group>"; };
+		34EC6E9320822E1C00DF5087 /* MutableGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableGame.swift; sourceTree = "<group>"; };
+		34EC6E9520822F3B00DF5087 /* PutWorkersPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutWorkersPhase.swift; sourceTree = "<group>"; };
+		34EC6E97208231B700DF5087 /* QuestionPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPhase.swift; sourceTree = "<group>"; };
+		34EC6E992082336F00DF5087 /* NextPlayerPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPlayerPhase.swift; sourceTree = "<group>"; };
+		34F7101720823D890094EC9F /* EndTurnPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndTurnPhase.swift; sourceTree = "<group>"; };
+		34F71019208240F40094EC9F /* EndGamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGamePhase.swift; sourceTree = "<group>"; };
+		34F7101B208246080094EC9F /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		34F7101D208249EC0094EC9F /* PresentDataPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDataPhase.swift; sourceTree = "<group>"; };
 		489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -250,11 +270,14 @@
 		34DC1B552081FAF500AF0996 /* gameLogic */ = {
 			isa = PBXGroup;
 			children = (
+				34EC6E8E20822C1B00DF5087 /* phases */,
 				34DC1B562081FB2300AF0996 /* Game.swift */,
+				34EC6E9320822E1C00DF5087 /* MutableGame.swift */,
 				34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */,
 				34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */,
 				34DC1B582081FB3500AF0996 /* Player.swift */,
 				34DC1B5A2081FB4A00AF0996 /* Move.swift */,
+				34F7101B208246080094EC9F /* QuestionData.swift */,
 			);
 			path = gameLogic;
 			sourceTree = "<group>";
@@ -274,6 +297,21 @@
 				34DC1B622081FD9C00AF0996 /* TextControl.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		34EC6E8E20822C1B00DF5087 /* phases */ = {
+			isa = PBXGroup;
+			children = (
+				34EC6E8F20822CA500DF5087 /* Phase.swift */,
+				34EC6E9120822CCA00DF5087 /* FindCountryPhase.swift */,
+				34F7101D208249EC0094EC9F /* PresentDataPhase.swift */,
+				34EC6E9520822F3B00DF5087 /* PutWorkersPhase.swift */,
+				34EC6E97208231B700DF5087 /* QuestionPhase.swift */,
+				34EC6E992082336F00DF5087 /* NextPlayerPhase.swift */,
+				34F7101720823D890094EC9F /* EndTurnPhase.swift */,
+				34F71019208240F40094EC9F /* EndGamePhase.swift */,
+			);
+			path = phases;
 			sourceTree = "<group>";
 		};
 		62B2D09AE6D40ACFCDFE3D5D /* Pods */ = {
@@ -523,19 +561,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F7101E208249EC0094EC9F /* PresentDataPhase.swift in Sources */,
+				34EC6E9220822CCA00DF5087 /* FindCountryPhase.swift in Sources */,
 				34913BC4207F88660031CD6F /* Country.swift in Sources */,
 				34913BBA207F71FE0031CD6F /* MainViewController.swift in Sources */,
+				34EC6E9620822F3B00DF5087 /* PutWorkersPhase.swift in Sources */,
 				34DC1B632081FD9C00AF0996 /* TextControl.swift in Sources */,
 				34913BC1207F7FBB0031CD6F /* ApiService+euroData.swift in Sources */,
+				34F7101820823D890094EC9F /* EndTurnPhase.swift in Sources */,
 				34DC1B652081FF7C00AF0996 /* UIColor+appColor.swift in Sources */,
 				34DC1B5E2081FBE500AF0996 /* BasicViews.swift in Sources */,
 				34DC1B69208202D500AF0996 /* FirstPhaseHelper.swift in Sources */,
+				34EC6E9420822E1C00DF5087 /* MutableGame.swift in Sources */,
 				34DC1B5B2081FB4A00AF0996 /* Move.swift in Sources */,
 				34913BCD207FA1370031CD6F /* Table.swift in Sources */,
+				34EC6E9020822CA500DF5087 /* Phase.swift in Sources */,
 				34DC1B602081FC9F00AF0996 /* OpacityControl.swift in Sources */,
 				34DC1B592081FB3500AF0996 /* Player.swift in Sources */,
 				34913BBF207F759D0031CD6F /* ApiService.swift in Sources */,
 				34DC1B672081FFC000AF0996 /* UIFont+appFont.swift in Sources */,
+				34EC6E9A2082336F00DF5087 /* NextPlayerPhase.swift in Sources */,
+				34EC6E98208231B700DF5087 /* QuestionPhase.swift in Sources */,
 				34913BBD207F723D0031CD6F /* BasicViewController.swift in Sources */,
 				34DC1B572081FB2300AF0996 /* Game.swift in Sources */,
 				346B2827207F6F23006F0B96 /* ViewController.swift in Sources */,
@@ -543,6 +589,8 @@
 				9E6F6A9E2082167100635874 /* float4x4 Extension.swift in Sources */,
 				346B2823207F6F23006F0B96 /* AppDelegate.swift in Sources */,
 				34913BC7207F97C10031CD6F /* TableConverter.swift in Sources */,
+				34F7101C208246090094EC9F /* QuestionData.swift in Sources */,
+				34F7101A208240F40094EC9F /* EndGamePhase.swift in Sources */,
 				34DC1B6B2082074300AF0996 /* SecondPhaseHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
