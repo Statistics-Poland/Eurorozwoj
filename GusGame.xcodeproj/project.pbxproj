@@ -23,6 +23,7 @@
 		34913BCB207F9EA50031CD6F /* TableConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCA207F9EA50031CD6F /* TableConverterTests.swift */; };
 		34913BCD207FA1370031CD6F /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCC207FA1370031CD6F /* Table.swift */; };
 		34913BCF207FA2610031CD6F /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34913BCE207FA2610031CD6F /* Value.swift */; };
+		34DC1B502081F0EA00AF0996 /* Countries.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DC1B522081F0EA00AF0996 /* Countries.strings */; };
 		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
 		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,9 @@
 		34913BCA207F9EA50031CD6F /* TableConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableConverterTests.swift; sourceTree = "<group>"; };
 		34913BCC207FA1370031CD6F /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		34913BCE207FA2610031CD6F /* Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Value.swift; sourceTree = "<group>"; };
+		34DC1B4C2081F0C200AF0996 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
+		34DC1B4D2081F0C200AF0996 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		34DC1B512081F0EA00AF0996 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Countries.strings; sourceTree = "<group>"; };
 		489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				34913BB7207F71970031CD6F /* api */,
 				34913BB6207F71960031CD6F /* common */,
 				34913BB5207F71960031CD6F /* modules */,
+				34DC1B4B2081F04200AF0996 /* translations */,
 				346B2824207F6F23006F0B96 /* art.scnassets */,
 				346B282B207F6F26006F0B96 /* Assets.xcassets */,
 				346B2826207F6F23006F0B96 /* ViewController.swift */,
@@ -210,6 +215,14 @@
 			path = algorithms;
 			sourceTree = "<group>";
 		};
+		34DC1B4B2081F04200AF0996 /* translations */ = {
+			isa = PBXGroup;
+			children = (
+				34DC1B522081F0EA00AF0996 /* Countries.strings */,
+			);
+			path = translations;
+			sourceTree = "<group>";
+		};
 		62B2D09AE6D40ACFCDFE3D5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,7 +308,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 346B2816207F6F23006F0B96;
@@ -316,6 +328,7 @@
 			files = (
 				346B2825207F6F23006F0B96 /* art.scnassets in Resources */,
 				346B282F207F6F26006F0B96 /* LaunchScreen.storyboard in Resources */,
+				34DC1B502081F0EA00AF0996 /* Countries.strings in Resources */,
 				346B282C207F6F26006F0B96 /* Assets.xcassets in Resources */,
 				346B282A207F6F23006F0B96 /* Main.storyboard in Resources */,
 			);
@@ -433,6 +446,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				346B2829207F6F23006F0B96 /* Base */,
+				34DC1B4C2081F0C200AF0996 /* pl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -441,8 +455,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				346B282E207F6F26006F0B96 /* Base */,
+				34DC1B4D2081F0C200AF0996 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		34DC1B522081F0EA00AF0996 /* Countries.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34DC1B512081F0EA00AF0996 /* pl */,
+			);
+			name = Countries.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -452,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -512,6 +536,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

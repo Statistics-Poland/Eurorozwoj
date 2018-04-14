@@ -10,6 +10,9 @@ import UIKit
 import SceneKit
 import ARKit
 
+
+fileprivate let tapId: String = "tap"
+
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
@@ -28,6 +31,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        sceneView.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +58,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Release any cached data, images, etc that aren't in use.
     }
 
+    
+    @objc private func handleTap(_ recognizer: UITapGestureRecognizer) {
+        let location: CGPoint = recognizer.location(in: sceneView)
+        let objects: [SCNHitTestResult] = sceneView.hitTest(location, options: nil)
+        let nodes: [SCNNode] = objects.map { $0.node }
+        let countries: [Country] = nodes.map {
+            (node: SCNNode) -> Country? in
+            guard let name: String = node.name else { return nil }
+            return Country(code: name)
+        }.filter { $0 != nil }.map { $0! }
+        for country: Country in countries {
+            print(country)
+        }
+    }
     // MARK: - ARSCNViewDelegate
     
 /*
