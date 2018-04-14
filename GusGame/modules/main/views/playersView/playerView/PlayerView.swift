@@ -14,7 +14,6 @@ protocol PlayerViewDelegate: class{
 
 class PlayerView: UIView {
     
-    
     weak var delegate: PlayerViewDelegate?
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var playerWorkers: UILabel!
@@ -24,6 +23,12 @@ class PlayerView: UIView {
             self.playerIcon.image = self.playerIcon.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
             self.playerIcon.tintColor = .red
         }
+    }
+    
+    func setup(player: Player) {
+        playerName.text = player.name
+        playerWorkers.text = "\(player.workers) | \(player.points)"
+        playerIcon.tintColor = player.color
     }
     
     override func awakeFromNib() {

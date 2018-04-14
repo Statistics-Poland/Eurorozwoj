@@ -50,13 +50,20 @@ class PlayersView: UIView {
         
         self.layer.cornerRadius = 8
         self.clipsToBounds = true
-        self.backgroundColor = UIColor.blue.withAlphaComponent(0.5)
+        self.backgroundColor = UIColor.app.grayLight
         
         addGestures()
         
 //        let gesture = UIGestureRecognizer()
 //        gesture.
     }
+    
+    func setup(playerModels: [Player]) {
+        for (player, view) in zip(playerModels, players) {
+            view.setup(player: player)
+        }
+    }
+    
     func populatePlayers() {
         for  playerNo in 1...playersNumber {
             let player: PlayerView = Bundle.main.loadNibNamed("PlayerView", owner: nil, options: nil)?.first as! PlayerView
@@ -68,6 +75,7 @@ class PlayersView: UIView {
             height += player.frame.height
         }
     }
+    
     func setArrow() {
         print("ustawiam arrow")
         arrowView.bounds.size.width = 20

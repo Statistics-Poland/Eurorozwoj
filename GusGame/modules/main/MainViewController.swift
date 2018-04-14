@@ -45,6 +45,7 @@ class MainViewController: BasicViewController {
         sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
         sceneView.isUserInteractionEnabled = true
+        sceneView.showPlayers(players: [])
         addEUMapTapGestureToSceneView()
     }
     

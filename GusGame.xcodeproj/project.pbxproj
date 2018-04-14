@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		346B2823207F6F23006F0B96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B2822207F6F23006F0B96 /* AppDelegate.swift */; };
 		346B2825207F6F23006F0B96 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 346B2824207F6F23006F0B96 /* art.scnassets */; };
-		346B2827207F6F23006F0B96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B2826207F6F23006F0B96 /* ViewController.swift */; };
 		346B282A207F6F23006F0B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B2828207F6F23006F0B96 /* Main.storyboard */; };
 		346B282C207F6F26006F0B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346B282B207F6F26006F0B96 /* Assets.xcassets */; };
 		346B282F207F6F26006F0B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346B282D207F6F26006F0B96 /* LaunchScreen.storyboard */; };
@@ -59,6 +58,7 @@
 		9E6F6AA020823F1600635874 /* BarNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9F20823F1600635874 /* BarNodeType.swift */; };
 		9EE906992082A1EF000D9602 /* BarChartCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE906982082A1EF000D9602 /* BarChartCreator.swift */; };
 		9EE9069B2082A4E5000D9602 /* ElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9069A2082A4E5000D9602 /* ElementModel.swift */; };
+		9EE9069E2082AFD7000D9602 /* DataBarSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9069D2082AFD7000D9602 /* DataBarSelectorView.swift */; };
 		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +77,6 @@
 		346B281F207F6F23006F0B96 /* GusGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GusGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346B2822207F6F23006F0B96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		346B2824207F6F23006F0B96 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		346B2826207F6F23006F0B96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		346B2829207F6F23006F0B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		346B282B207F6F26006F0B96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		346B282E207F6F26006F0B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -135,6 +134,7 @@
 		9E6F6A9F20823F1600635874 /* BarNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarNodeType.swift; sourceTree = "<group>"; };
 		9EE906982082A1EF000D9602 /* BarChartCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCreator.swift; sourceTree = "<group>"; };
 		9EE9069A2082A4E5000D9602 /* ElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementModel.swift; sourceTree = "<group>"; };
+		9EE9069D2082AFD7000D9602 /* DataBarSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBarSelectorView.swift; sourceTree = "<group>"; };
 		AF6F809B0B18D09B6BB90295 /* Pods-GusGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGame/Pods-GusGame.release.xcconfig"; sourceTree = "<group>"; };
 		D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -207,7 +207,6 @@
 		34913BB5207F71960031CD6F /* modules */ = {
 			isa = PBXGroup;
 			children = (
-				9E6F6A932082121600635874 /* home */,
 				34913BB8207F71D70031CD6F /* main */,
 			);
 			path = modules;
@@ -295,6 +294,7 @@
 		34A9F2E92082AA6000C192B1 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				9EE9069C2082AF9B000D9602 /* DataBarSelectorView */,
 				34A9F2EA2082AA6000C192B1 /* infoScreen */,
 				34A9F2ED2082AA6000C192B1 /* playersView */,
 				34A9F2F22082AA6000C192B1 /* MainView.swift */,
@@ -396,14 +396,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9E6F6A932082121600635874 /* home */ = {
-			isa = PBXGroup;
-			children = (
-				346B2826207F6F23006F0B96 /* ViewController.swift */,
-			);
-			path = home;
-			sourceTree = "<group>";
-		};
 		9E6F6A942082123F00635874 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +447,14 @@
 				9E6F6A9D2082167100635874 /* float4x4 Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9EE9069C2082AF9B000D9602 /* DataBarSelectorView */ = {
+			isa = PBXGroup;
+			children = (
+				9EE9069D2082AFD7000D9602 /* DataBarSelectorView.swift */,
+			);
+			path = DataBarSelectorView;
 			sourceTree = "<group>";
 		};
 		C5C1189BA0183E8ABF952EBA /* Frameworks */ = {
@@ -666,10 +666,10 @@
 				34EC6E98208231B700DF5087 /* QuestionPhase.swift in Sources */,
 				9EE906992082A1EF000D9602 /* BarChartCreator.swift in Sources */,
 				34A9F2F42082AA6000C192B1 /* InfoScreenView.swift in Sources */,
+				9EE9069E2082AFD7000D9602 /* DataBarSelectorView.swift in Sources */,
 				9E6F6AA020823F1600635874 /* BarNodeType.swift in Sources */,
 				34913BBD207F723D0031CD6F /* BasicViewController.swift in Sources */,
 				34DC1B572081FB2300AF0996 /* Game.swift in Sources */,
-				346B2827207F6F23006F0B96 /* ViewController.swift in Sources */,
 				34913BCF207FA2610031CD6F /* Value.swift in Sources */,
 				9E6F6A9E2082167100635874 /* float4x4 Extension.swift in Sources */,
 				34A9F2F62082AA6000C192B1 /* PlayerView.swift in Sources */,
