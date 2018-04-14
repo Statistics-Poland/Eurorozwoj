@@ -1,3 +1,4 @@
+
 import UIKit
 import SceneKit
 import ARKit
@@ -7,7 +8,7 @@ class MainViewController: BasicViewController {
     
     
     // MARK: - Properties
-    
+    let playersView: PlayersView = PlayersView()
     private var mapNode: SCNNode? {
         didSet {
         }
@@ -24,6 +25,8 @@ class MainViewController: BasicViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(playersView)
+        playersView.frame.origin = CGPoint(x: 10.0, y: 10.0)
         // PAWEL GOWNO POBIERANIE DANYCH XD
         //        ApiService.shared.getFishingData().done {
         //            (table: Table<Double>) in
@@ -39,6 +42,8 @@ class MainViewController: BasicViewController {
         sceneView.autoenablesDefaultLighting = true
         addEUMapTapGestureToSceneView()
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
