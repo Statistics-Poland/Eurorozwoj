@@ -46,6 +46,14 @@ class MainViewController: BasicViewController {
         sceneView.autoenablesDefaultLighting = true
         sceneView.isUserInteractionEnabled = true
         addEUMapTapGestureToSceneView()
+        
+        ApiService.shared.getAllShityData().done {
+            (table: [Table<Double>]) in
+            print("ok")
+        }.catch {
+            (error: Error) in
+            print(error)
+        }
     }
     
     
