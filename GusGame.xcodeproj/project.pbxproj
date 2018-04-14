@@ -32,7 +32,7 @@
 		34DC1B632081FD9C00AF0996 /* TextControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B622081FD9C00AF0996 /* TextControl.swift */; };
 		34DC1B652081FF7C00AF0996 /* UIColor+appColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B642081FF7C00AF0996 /* UIColor+appColor.swift */; };
 		34DC1B672081FFC000AF0996 /* UIFont+appFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B662081FFC000AF0996 /* UIFont+appFont.swift */; };
-		34DC1B69208202D500AF0996 /* FirstPhaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */; };
+		34DC1B69208202D500AF0996 /* CountriesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B68208202D500AF0996 /* CountriesHelper.swift */; };
 		34DC1B6B2082074300AF0996 /* SecondPhaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */; };
 		34EC6E9020822CA500DF5087 /* Phase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC6E8F20822CA500DF5087 /* Phase.swift */; };
 		34EC6E9220822CCA00DF5087 /* FindCountryPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EC6E9120822CCA00DF5087 /* FindCountryPhase.swift */; };
@@ -93,7 +93,7 @@
 		34DC1B622081FD9C00AF0996 /* TextControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextControl.swift; sourceTree = "<group>"; };
 		34DC1B642081FF7C00AF0996 /* UIColor+appColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+appColor.swift"; sourceTree = "<group>"; };
 		34DC1B662081FFC000AF0996 /* UIFont+appFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+appFont.swift"; sourceTree = "<group>"; };
-		34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPhaseHelper.swift; sourceTree = "<group>"; };
+		34DC1B68208202D500AF0996 /* CountriesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesHelper.swift; sourceTree = "<group>"; };
 		34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPhaseHelper.swift; sourceTree = "<group>"; };
 		34EC6E8F20822CA500DF5087 /* Phase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phase.swift; sourceTree = "<group>"; };
 		34EC6E9120822CCA00DF5087 /* FindCountryPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCountryPhase.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 				34EC6E8E20822C1B00DF5087 /* phases */,
 				34DC1B562081FB2300AF0996 /* Game.swift */,
 				34EC6E9320822E1C00DF5087 /* MutableGame.swift */,
-				34DC1B68208202D500AF0996 /* FirstPhaseHelper.swift */,
+				34DC1B68208202D500AF0996 /* CountriesHelper.swift */,
 				34DC1B6A2082074300AF0996 /* SecondPhaseHelper.swift */,
 				34DC1B582081FB3500AF0996 /* Player.swift */,
 				34DC1B5A2081FB4A00AF0996 /* Move.swift */,
@@ -573,7 +573,7 @@
 				34F7101820823D890094EC9F /* EndTurnPhase.swift in Sources */,
 				34DC1B652081FF7C00AF0996 /* UIColor+appColor.swift in Sources */,
 				34DC1B5E2081FBE500AF0996 /* BasicViews.swift in Sources */,
-				34DC1B69208202D500AF0996 /* FirstPhaseHelper.swift in Sources */,
+				34DC1B69208202D500AF0996 /* CountriesHelper.swift in Sources */,
 				34EC6E9420822E1C00DF5087 /* MutableGame.swift in Sources */,
 				34DC1B5B2081FB4A00AF0996 /* Move.swift in Sources */,
 				34913BCD207FA1370031CD6F /* Table.swift in Sources */,
@@ -772,7 +772,10 @@
 				DEVELOPMENT_TEAM = 775NKU5HEM;
 				INFOPLIST_FILE = "$(SRCROOT)/GusGame/support files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameMO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -789,7 +792,10 @@
 				DEVELOPMENT_TEAM = 775NKU5HEM;
 				INFOPLIST_FILE = "$(SRCROOT)/GusGame/support files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameMO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -806,7 +812,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GU34X5QPPY;
 				INFOPLIST_FILE = GusGameTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -824,7 +834,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GU34X5QPPY;
 				INFOPLIST_FILE = GusGameTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
