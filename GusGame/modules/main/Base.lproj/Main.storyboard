@@ -12,7 +12,7 @@
         <scene sceneID="2au-SG-2uW">
             <objects>
                 <viewController id="1j4-kx-SEO" customClass="MainViewController" customModule="GusGame" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="hE0-PU-Z6f">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="hE0-PU-Z6f" customClass="MainView" customModule="GusGame" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
