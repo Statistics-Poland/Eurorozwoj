@@ -47,6 +47,8 @@
 		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
 		9E6F6A9E2082167100635874 /* float4x4 Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9D2082167100635874 /* float4x4 Extension.swift */; };
 		9E6F6AA020823F1600635874 /* BarNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9F20823F1600635874 /* BarNodeType.swift */; };
+		9EE906992082A1EF000D9602 /* BarChartCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE906982082A1EF000D9602 /* BarChartCreator.swift */; };
+		9EE9069B2082A4E5000D9602 /* ElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9069A2082A4E5000D9602 /* ElementModel.swift */; };
 		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +113,8 @@
 		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E6F6A9D2082167100635874 /* float4x4 Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "float4x4 Extension.swift"; sourceTree = "<group>"; };
 		9E6F6A9F20823F1600635874 /* BarNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarNodeType.swift; sourceTree = "<group>"; };
+		9EE906982082A1EF000D9602 /* BarChartCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCreator.swift; sourceTree = "<group>"; };
+		9EE9069A2082A4E5000D9602 /* ElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementModel.swift; sourceTree = "<group>"; };
 		AF6F809B0B18D09B6BB90295 /* Pods-GusGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGame/Pods-GusGame.release.xcconfig"; sourceTree = "<group>"; };
 		D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -215,7 +219,9 @@
 			children = (
 				346B2828207F6F23006F0B96 /* Main.storyboard */,
 				34913BB9207F71FE0031CD6F /* MainViewController.swift */,
+				9EE906982082A1EF000D9602 /* BarChartCreator.swift */,
 				9E6F6A9F20823F1600635874 /* BarNodeType.swift */,
+				9EE9069A2082A4E5000D9602 /* ElementModel.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE9069B2082A4E5000D9602 /* ElementModel.swift in Sources */,
 				34F7101E208249EC0094EC9F /* PresentDataPhase.swift in Sources */,
 				34EC6E9220822CCA00DF5087 /* FindCountryPhase.swift in Sources */,
 				34913BC4207F88660031CD6F /* Country.swift in Sources */,
@@ -587,6 +594,7 @@
 				34DC1B672081FFC000AF0996 /* UIFont+appFont.swift in Sources */,
 				34EC6E9A2082336F00DF5087 /* NextPlayerPhase.swift in Sources */,
 				34EC6E98208231B700DF5087 /* QuestionPhase.swift in Sources */,
+				9EE906992082A1EF000D9602 /* BarChartCreator.swift in Sources */,
 				9E6F6AA020823F1600635874 /* BarNodeType.swift in Sources */,
 				34913BBD207F723D0031CD6F /* BasicViewController.swift in Sources */,
 				34DC1B572081FB2300AF0996 /* Game.swift in Sources */,
