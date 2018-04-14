@@ -20,6 +20,10 @@ class MainViewController: BasicViewController {
     private var defaultTransform: SCNMatrix4?
     private let moveBy: CGFloat = 0.8
     
+    // MOVE TO VIEW MODEL
+    
+    private var barNodeTypes: [BarNodeType] = [BarNodeType(name: "1", value: 0.5, barHight: 1), BarNodeType(name: "2", value: 0.5, barHight: 1.3), BarNodeType(name: "3", value: 0.5, barHight: 2.0) ]
+    
     // MARK: - Outlets
     
     @IBOutlet var sceneView: ARSCNView!
@@ -85,37 +89,111 @@ class MainViewController: BasicViewController {
         guard let country = countries.first else { return }
         if defaultTransform == nil {
             highlight(country: country)
+            addBars(barNodes: barNodeTypes, to: country)
+            
         } else {
+            removeBars()
+//            setColor(for: country, color: UIColor.app.pink)
             dehighlight(country: country)
         }
     }
     
+    @objc private func selectBar(_ recognizer: UITapGestureRecognizer) {
+        let location: CGPoint = recognizer.location(in: sceneView)
+        let objects: [SCNHitTestResult] = sceneView.hitTest(location, options: nil)
+        let nodes: [SCNNode] = objects.map { $0.node }
+        let barName: [String] = nodes.compactMap { (node) -> String? in
+            return node.name
+        }
+        guard let name = barName.first else { return }
+        guard let barType = barNodeTypes.first(where: { $0.name == name}) else { return }
+    }
     
     // MARK: - Helpers
     
-    private func highlight(country: Country) {
-        guard let mapNode = sceneView.scene.rootNode.childNodes.first(where: { $0.name == NodeNames.map.rawValue }) else { return }
-        guard let countryNode = mapNode.childNodes.first(where: { $0.name == country.rawValue }) else { return }
-        defaultTransform = countryNode.transform
-        let action = SCNAction.customAction(duration: 0.3) { (countryNode, _) in
-            countryNode.transform = SCNMatrix4Scale(countryNode.transform, 1, 1.12, 1)
+    private func setColor(for country: Country, color: UIColor) {
+        guard let countryNode = getNode(for: country) else { return }
+        countryNode.geometry?.firstMaterial?.diffuse.contents = color
+    }
+    
+//
+//    private func addBarInfo(text: String, node: SCNNode, maxHeight: Float) {
+//        guard let mapNode = getMapNode() else { return }
+//        let labelNode = SKLabelNode(text: "Hello World")
+//        labelNode.fontSize = 20
+//        labelNode.fontName = "San Fransisco"
+//        labelNode.position = CGPoint(x: CGFloat(node.position.x), y: CGFloat(node.position.z))
+//        labelNode.zPosition = CGFloat(node.position.y + maxHeight)
+//        let node = SCNNode(geometry: labelNode)
+//        mapNode.addChildNode(node)
+//    }
+    
+    private func addBars(barNodes: [BarNodeType], to country: Country) {
+        guard let countryNode = getNode(for: country) else { return }
+        let position1 = SCNVector3(countryNode.position.x, countryNode.position.y + 0.3, countryNode.position.z)
+        addBar(barNode: barNodes[0], at: position1)
+        let position2 = SCNVector3(countryNode.position.x + 1, countryNode.position.y + 0.3, countryNode.position.z)
+        addBar(barNode: barNodes[1], at: position2)
+        let position3 = SCNVector3(countryNode.position.x - 1, countryNode.position.y + 0.3, countryNode.position.z)
+        addBar(barNode: barNodes[2], at: position3)
+        //addSelectBarTapGestureToSceneView()
+    }
+    
+    private func addBar(barNode: BarNodeType, at position: SCNVector3) {
+        guard let mapNode = getMapNode() else { return }
+        let box = SCNBox(width: 0.8, height: barNode.barHight, length: 0.8, chamferRadius: 0)
+        box.firstMaterial?.diffuse.contents = barNode.color
+        let boxNode = SCNNode(geometry: box)
+        boxNode.pivot = SCNMatrix4MakeTranslation(0, -Float(barNode.barHight / 2), 0)
+        boxNode.name = barNode.name
+        boxNode.opacity = 1.0
+        boxNode.position = position
+        mapNode.addChildNode(boxNode)
+    }
+    
+    private func removeBars() {
+        for bar in barNodeTypes {
+            removeBar(barNode: bar)
         }
-        let moveActions = SCNAction.moveBy(x: 0.0, y: moveBy, z: 0, duration: 1)
-        let actions = SCNAction.group([action, moveActions])
-        countryNode.runAction(actions)
+        addSelectCountryTapGestureToSceneView()
+    }
+    
+    private func removeBar(barNode: BarNodeType) {
+        guard let mapNode = getMapNode() else { return }
+        guard let barNode = mapNode.childNodes.first(where: { $0.name == barNode.name }) else { return }
+        barNode.removeFromParentNode()
+    }
+    
+    private func highlight(country: Country) {
+        guard let countryNode = getNode(for: country) else { return }
+        defaultTransform = countryNode.transform
+        moveAndResize(node: countryNode, moveBy: moveBy, scaleBy: CGFloat(2), transform: countryNode.transform)
     }
     
     private func dehighlight(country: Country) {
-        guard let mapNode = sceneView.scene.rootNode.childNodes.first(where: { $0.name == NodeNames.map.rawValue }) else { return }
-        guard let countryNode = mapNode.childNodes.first(where: { $0.name == country.rawValue }) else { return }
-        defaultTransform = countryNode.transform
-        let action = SCNAction.customAction(duration: 0.3) { (countryNode, _) in
-            countryNode.transform = SCNMatrix4Scale(countryNode.transform, 1, 0.889, 1)
-        }
-        let moveActions = SCNAction.moveBy(x: 0.0, y: -moveBy, z: 0, duration: 1)
-        let actions = SCNAction.group([action, moveActions])
-        countryNode.runAction(actions)
+        guard let countryNode = getNode(for: country) else { return }
+        guard let transform = defaultTransform else { return }
+        moveAndResize(node: countryNode, moveBy: -moveBy, scaleBy: CGFloat(0.5), transform: transform)
         defaultTransform = nil
+    }
+    
+    private func moveAndResize(node: SCNNode, moveBy: CGFloat, scaleBy: CGFloat, transform: SCNMatrix4) {
+//        let action = SCNAction.customAction(duration: 0.3) { (node, _) in
+//            node.transform = SCNMatrix4Scale(transform, 1, scaleHeightBy, 1)
+//        }
+        let scaleAction = SCNAction.scale(by: CGFloat(scaleBy), duration: 1)
+        let moveActions = SCNAction.moveBy(x: 0.0, y: moveBy, z: 0, duration: 1)
+        let actions = SCNAction.group([scaleAction, moveActions])
+        node.runAction(actions)
+    }
+    
+    private func getNode(for country: Country) -> SCNNode? {
+        guard let mapNode = getMapNode() else { return nil }
+        return mapNode.childNodes.first(where: { $0.name == country.rawValue })
+    }
+    
+    private func getMapNode() -> SCNNode? {
+        return sceneView.scene.rootNode.childNodes.first(where: { $0.name == NodeNames.map.rawValue })
     }
     
     private func addMap(at position: SCNVector3) {
@@ -147,6 +225,12 @@ class MainViewController: BasicViewController {
     
     // MARK: - Setup Gestures
     
+    private func addGestures() {
+        addEUMapTapGestureToSceneView()
+        addSelectCountryTapGestureToSceneView()
+        addSelectBarTapGestureToSceneView()
+    }
+    
     private func addEUMapTapGestureToSceneView() {
         let addEUMapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addMapToSceneView(withGestureRecognizer:)))
         sceneView.addGestureRecognizer(addEUMapGestureRecognizer)
@@ -155,6 +239,11 @@ class MainViewController: BasicViewController {
     private func addSelectCountryTapGestureToSceneView() {
         let selectCountryGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectCountry(_:)))
         sceneView.addGestureRecognizer(selectCountryGestrueRecognizer)
+    }
+    
+    private func addSelectBarTapGestureToSceneView() {
+        let selectBarGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectBar(_:)))
+        sceneView.addGestureRecognizer(selectBarGestureRecognizer)
     }
 }
 

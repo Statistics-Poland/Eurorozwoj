@@ -6,4 +6,13 @@
 //  Copyright © 2018 Paweł Czerwiński. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct BarNodeType {
+    
+    let name: String
+    let value: Double
+    let barHight: CGFloat
+    let color: UIColor = UIColor.app.blueLight
+
+}
