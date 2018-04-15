@@ -3,23 +3,24 @@ import UIKit
 
 extension MainViewController: GameManagerDelegate {
     func gameManager(showFindSurface manager: GameManager) {
-        
+//        sceneView.showBottomBtn(withText: "Start")
     }
     func gameManager(_ manager: GameManager, enterSelectCountry country: Country, player: Player) {
-        sceneView.showTopLbl(withText: "Kraj do zaznaczenai: \(country)")
+        sceneView.showTopLbl(withText: "Zaznacz Kraj: \(country)")
         inSelectCountry = true
     }
     func gameManager(invalidCountrySelected manager: GameManager) {
-        print("Potrząśij ekranem")
+        sceneView.showTopLbl(withText: "ŹLE!")
+        sceneView.layer.add(Animations.shakeAnimation, forKey: "shakeItBycz")
         
     }
     func gameManager(_ manager: GameManager, showData: QuestionData, for country: Country) {
-            }
-    
+      //  addBarInfos()
+    }
     
     func gameManager(_ manager: GameManager, askQuestionWithData showData: QuestionData, country: Country, player: Player) {
         var barNodes: [BarNodeType] = []
-        let maxRealHeight: Double = 1.0
+        let maxRealHeight: Double = 2.0
         for (index, data) in showData.values.enumerated() {
             print("data: \(data)")
             let barheight = ( maxRealHeight / (showData.maxValue - showData.minValue)) * (data - showData.minValue)
@@ -35,7 +36,6 @@ extension MainViewController: GameManagerDelegate {
     
     func gameManager(_ manager: GameManager, switchTo player: Player) {
         print("zmien gracza")
-        
         let alert: UIAlertController = UIAlertController(
             title: nil,
             message: "Przekaż telefon do \(player.name)",
@@ -51,6 +51,8 @@ extension MainViewController: GameManagerDelegate {
     }
     
     func gameManager(_ manager: GameManager, delegateWorkers player: Player, country: Country) {
+        hideActive(country: country)
+        
         print("ustaw pracowników")
     }
     func gameManager(endTurn manager: GameManager) {

@@ -9,14 +9,14 @@ import RxSwift
 class MainViewController: BasicViewController, MainViewDelegate {
     
     // MARK: - Properties
-
-//    let playersView: PlayersView = PlayersView()
+    
     var mapNode: SCNNode?
     var elementsNodes: [SCNNode] = []
     var plane: SCNNode?
     var defaultTransform: SCNMatrix4?
     let moveBy: CGFloat = 0.8
     
+   // var inStartMode: Bool = true
     var inSelectCountry: Bool = false
     
     var isShowingData: Bool = false
@@ -33,7 +33,10 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     var selectedDatas: [Int: Double] = [:]
     var questionData: QuestionData?
-     var barNodeTypes: [BarNodeType] = []
+    var barNodeTypes: [BarNodeType] = [] {
+        didSet { gestureBarTypes = barNodeTypes }
+    }
+    var gestureBarTypes: [BarNodeType] = []
     
     // MARK: - Outlets
     
@@ -48,34 +51,21 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.addSubview(playersView)
-//        playersView.frame.origin = CGPoint(x: 10.0, y: 10.0)
-        // PAWEL GOWNO POBIERANIE DANYCH XD
-        //        ApiService.shared.getFishingData().done {
-        //            (table: Table<Double>) in
-        //            print(table.valueFor(country: Country.cyprus, year: 2015))
-        //            }.catch {
-        //                (error: Error) in
-        //                print(error)
-        //        }
         sceneView.delegate = self
-        // USUNAC DO PREZENTACJI !!!
-        sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
         sceneView.isUserInteractionEnabled = true
         sceneView.showPlayers(players: [])
         addEUMapTapGestureToSceneView()
-        
+        sceneView.hideTopLbl()
+        sceneView.hideBottomBtn()
         ApiService.shared.getAllShityData().done {
             (tables: [Table<Double>]) in
             self.gameManager = GameManager(dataSet: tables)
-        }.catch {
-            (error: Error) in
-            print(error)
+            }.catch {
+                (error: Error) in
+                print(error)
         }
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -113,7 +103,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
             guard let name: String = node.name else { return nil }
             if name.last == "_" {
                 return Country(code: String(name.dropLast()))
-                }
+            }
             return Country(code: name)
         }
         guard let country = countries.first else { return }
@@ -121,22 +111,22 @@ class MainViewController: BasicViewController, MainViewDelegate {
             inSelectCountry = false
             gameManager.selected(country: country)
         } else {
-            if defaultTransform == nil {
-                removeModels()
-                highlight(country: country) { [weak self] in
-                    guard let barNodeTypes = self?.barNodeTypes else { return }
-                    guard let countryNode = self?.getNode(for: country) else { return }
-                    guard let mapNode = self?.getMapNode() else { return }
-                    self?.barChartCreator.addBars(barNodes: barNodeTypes, for: countryNode, to: mapNode)
-                }
-            } else {
-                guard let mapNode = getMapNode() else { return }
-                barChartCreator.removeBars(for: barNodeTypes, parentNode: mapNode)
-                addSelectCountryTapGestureToSceneView()
-                dehighlight(country: country) { [weak self] in
-                    self?.addModels()
-                }
-            }
+            //            if defaultTransform == nil {
+            //                removeModels()
+            //                highlight(country: country) { [weak self] in
+            //                    guard let barNodeTypes = self?.barNodeTypes else { return }
+            //                    guard let countryNode = self?.getNode(for: country) else { return }
+            //                    guard let mapNode = self?.getMapNode() else { return }
+            //                    self?.barChartCreator.addBars(barNodes: barNodeTypes, for: countryNode, to: mapNode)
+            //                }
+            //            } else {
+            //                guard let mapNode = getMapNode() else { return }
+            //                barChartCreator.removeBars(for: barNodeTypes, parentNode: mapNode)
+            //                addSelectCountryTapGestureToSceneView()
+            //                dehighlight(country: country) { [weak self] in
+            //                    self?.addModels()
+            //                }
+            //            }
         }
     }
     
@@ -148,7 +138,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
             return node.name
         }
         guard let name = barName.first else { return }
-        guard let barType = barNodeTypes.first(where: { $0.name == name}) else { return }
+        guard let barType = gestureBarTypes.first(where: { $0.name == name}) else { return }
         var datas: [Int: Bool] = [:]
         guard let quesitonData = questionData else { return }
         for year in quesitonData.years {
@@ -158,7 +148,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
                 datas[year] = true
             }
         }
-        barNodeTypes.remove(at: barNodeTypes.index(where: { $0.name == name })!)
+        gestureBarTypes.remove(at: gestureBarTypes.index(where: { $0.name == name })!)
         sceneView.showDataSelectorView(datas: datas, barNodeType: barType)
     }
     
@@ -179,7 +169,24 @@ class MainViewController: BasicViewController, MainViewDelegate {
         barNodeTypes = barNodes
     }
     
-     func addModels() {
+    func hideActive(country: Country) {
+        guard let mapNode = getMapNode() else { return }
+        barChartCreator.removeBars(for: barNodeTypes, parentNode: mapNode)
+        dehighlight(country: country) { [weak self] in
+            self?.addModels()
+        }
+    }
+    
+    func addBarInfos() {
+        guard let mapNode = getMapNode() else { return }
+        let datas: [(String, SCNNode)] = barNodeTypes.compactMap { (barType) -> ((String, SCNNode))? in
+            guard let node = getNode(for: barType.name) else { return nil }
+            return ("\(barType.value)", node)
+        }
+        barChartCreator.addBarInfos(datas: datas, maxHeight: Float(questionData!.maxValue), parentNode: mapNode)
+    }
+    
+    func addModels() {
         // POLAND
         guard let polandNode = getNode(for: Country.poland) else { return }
         var position = SCNVector3(x: polandNode.position.x, y: polandNode.position.y + 0.4, z: polandNode.position.z)
@@ -212,7 +219,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
         setModel(node: ElementModel.eiffla.getModel(), position: position, transform: transform)
     }
     
-     func animateModel(node: SCNNode) {
+    func animateModel(node: SCNNode) {
         let moveActions = SCNAction.sequence([SCNAction.moveBy(x: 0, y: 0.3, z: 0, duration: 1), SCNAction.moveBy(x: 0, y: -0.3, z: 0, duration: 1)])
         let rotoateActions = SCNAction.rotateBy(x: 0, y:  -(CGFloat.pi / 2), z: 0, duration: 2)
         let actions = SCNAction.group([moveActions, rotoateActions])
@@ -221,14 +228,14 @@ class MainViewController: BasicViewController, MainViewDelegate {
         })
     }
     
-     func removeModels() {
+    func removeModels() {
         for node in elementsNodes {
             node.removeFromParentNode()
         }
         elementsNodes.removeAll()
     }
     
-     func setModel(node: SCNNode, position: SCNVector3, transform: SCNMatrix4) {
+    func setModel(node: SCNNode, position: SCNVector3, transform: SCNMatrix4) {
         guard let mapNode = getMapNode() else { return }
         node.transform = transform
         node.position = position
@@ -237,25 +244,25 @@ class MainViewController: BasicViewController, MainViewDelegate {
         animateModel(node: node)
     }
     
-     func setColor(for country: Country, color: UIColor) {
+    func setColor(for country: Country, color: UIColor) {
         guard let countryNode = getNode(for: country) else { return }
         countryNode.geometry?.firstMaterial?.diffuse.contents = color
     }
     
-     func highlight(country: Country, completion: (() -> ())?) {
+    func highlight(country: Country, completion: (() -> ())?) {
         guard let countryNode = getNode(for: country) else { return }
         defaultTransform = countryNode.transform
         moveAndResize(node: countryNode, moveBy: moveBy, scaleBy: CGFloat(2), transform: countryNode.transform, completion: completion)
     }
     
-     func dehighlight(country: Country, completion: (() -> ())?) {
+    func dehighlight(country: Country, completion: (() -> ())?) {
         guard let countryNode = getNode(for: country) else { return }
         guard let transform = defaultTransform else { return }
         moveAndResize(node: countryNode, moveBy: -moveBy, scaleBy: CGFloat(0.5), transform: transform, completion: completion)
         defaultTransform = nil
     }
     
-     func moveAndResize(node: SCNNode, moveBy: CGFloat, scaleBy: CGFloat, transform: SCNMatrix4, completion: (() -> ())?) {
+    func moveAndResize(node: SCNNode, moveBy: CGFloat, scaleBy: CGFloat, transform: SCNMatrix4, completion: (() -> ())?) {
         //        let action = SCNAction.customAction(duration: 0.3) { (node, _) in
         //            node.transform = SCNMatrix4Scale(transform, 1, scaleHeightBy, 1)
         //        }
@@ -265,16 +272,21 @@ class MainViewController: BasicViewController, MainViewDelegate {
         node.runAction(actions, completionHandler: completion)
     }
     
-     func getNode(for country: Country) -> SCNNode? {
+    func getNode(for barNodeTypeName: String) -> SCNNode? {
+        guard let mapNode = getMapNode() else { return nil }
+        return mapNode.childNodes.first(where: { $0.name == barNodeTypeName })
+    }
+    
+    func getNode(for country: Country) -> SCNNode? {
         guard let mapNode = getMapNode() else { return nil }
         return mapNode.childNodes.first(where: { $0.name == country.rawValue })
     }
     
-     func getMapNode() -> SCNNode? {
+    func getMapNode() -> SCNNode? {
         return sceneView.scene.rootNode.childNodes.first(where: { $0.name == ElementModel.map.rawValue })
     }
     
-     func addMap(at position: SCNVector3) {
+    func addMap(at position: SCNVector3) {
         guard self.mapNode == nil else { return }
         let nodeEUMap = ElementModel.map.getModel()
         nodeEUMap.transform = SCNMatrix4Scale(SCNMatrix4Identity, 0.08, 0.08, 0.08)
@@ -287,7 +299,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
         gameManager.mapWasPlaced()
     }
     
-     func addPlane(at planeAnchor: ARPlaneAnchor, to node: SCNNode) {
+    func addPlane(at planeAnchor: ARPlaneAnchor, to node: SCNNode) {
         let plane = SCNPlane(width: CGFloat(1), height: CGFloat(1))
         let planeNode = SCNNode(geometry: plane)
         planeNode.simdPosition = float3(planeAnchor.center.x, 0, planeAnchor.center.z)
@@ -299,26 +311,30 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     // MARK: - Setup Gestures
     
-     func addEUMapTapGestureToSceneView() {
+    func addEUMapTapGestureToSceneView() {
         let addEUMapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addMapToSceneView(withGestureRecognizer:)))
         sceneView.addGestureRecognizer(addEUMapGestureRecognizer)
     }
     
-     func addSelectCountryTapGestureToSceneView() {
+    func addSelectCountryTapGestureToSceneView() {
         let selectCountryGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectCountry(_:)))
         sceneView.addGestureRecognizer(selectCountryGestrueRecognizer)
     }
     
-     func addSelectBarTapGestureToSceneView() {
+    func addSelectBarTapGestureToSceneView() {
         let selectBarGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectBar(_:)))
         sceneView.addGestureRecognizer(selectBarGestureRecognizer)
     }
     // MARK: MainViewDelegate
     func mainView(didPressBtn view: MainView) {
+//        if inStartMode {
+//            inStartMode = false
+//        }
+        
         if isShowingData {
-            print("schowaj bary")
-            isShowingData = false
-            gameManager.dataWasPresented()
+            //            print("schowaj bary")
+            //            isShowingData = false
+            //            gameManager.dataWasPresented()
         }
     }
     
@@ -328,17 +344,29 @@ class MainViewController: BasicViewController, MainViewDelegate {
             gameManager.answer(selectedDatas.map({ ($0.key, $0.value)}))
         }
     }
+    
+    func mainView(_ view: MainView, didPut workers: Int) {
+        // ADDD CODE
+    }
 }
 
 extension MainViewController: ARSCNViewDelegate  {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        //guard !inStartMode else { return }
         guard plane == nil else { return }
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         guard mapNode == nil else { return }
         addPlane(at: planeAnchor, to: node)
     }
     
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//        guard !inStartMode else { return }
+//        guard plane == nil else { return }
+//        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+//        guard mapNode == nil else { return }
+//        addPlane(at: planeAnchor, to: node)
+    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

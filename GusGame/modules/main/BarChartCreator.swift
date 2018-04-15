@@ -13,12 +13,17 @@ class BarChartCreator {
     
     // Actions
     
+    func addBarInfos(datas: [(String, SCNNode)], maxHeight: Float, parentNode: SCNNode) {
+        for data in datas {
+            addBarInfo(text: data.0, node: data.1, maxHeight: maxHeight, parentNode: parentNode)
+        }
+    }
+    
     func removeBars(for barNodeTypes: [BarNodeType], parentNode: SCNNode) {
         for bar in barNodeTypes {
             removeBar(barNode: bar, parentNode: parentNode)
         }
         removeBarInfos(parentNode: parentNode)
-       // addSelectCountryTapGestureToSceneView()
     }
     
     func addBars(barNodes: [BarNodeType], for countryNode: SCNNode, to parentNode: SCNNode) {
@@ -28,11 +33,11 @@ class BarChartCreator {
         addBar(barNode: barNodes[1], at: position2, parentNode: parentNode)
         let position3 = SCNVector3(countryNode.position.x - 1, countryNode.position.y + 0.3, countryNode.position.z)
         addBar(barNode: barNodes[2], at: position3, parentNode: parentNode)
-        //addSelectBarTapGestureToSceneView()
     }
     
+    // Helpers
     
-    func addBarInfo(text: String, node: SCNNode, maxHeight: Float, parentNode: SCNNode) {
+    private func addBarInfo(text: String, node: SCNNode, maxHeight: Float, parentNode: SCNNode) {
         let labelNode = SKLabelNode(text: text)
         labelNode.fontSize = 50
         labelNode.fontName = UIFont.app.standard_17.fontName
@@ -56,9 +61,6 @@ class BarChartCreator {
         parentNode.addChildNode(hudNode)
     }
     
-    
-    // Helpers
-    
     private func removeBarInfos(parentNode: SCNNode) {
         let hudNodes = parentNode.childNodes.filter({ $0.name == "HUD" })
         hudNodes.forEach({ $0.removeFromParentNode()})
@@ -73,7 +75,6 @@ class BarChartCreator {
         boxNode.opacity = 1.0
         boxNode.position = position
         parentNode.addChildNode(boxNode)
-//        addBarInfo(text: "hehe", node: boxNode, maxHeight: 2.4, parentNode: parentNode)
     }
     
     private func removeBar(barNode: BarNodeType, parentNode: SCNNode) {
