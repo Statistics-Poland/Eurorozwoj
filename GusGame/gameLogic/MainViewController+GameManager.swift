@@ -15,7 +15,11 @@ extension MainViewController: GameManagerDelegate {
         
     }
     func gameManager(_ manager: GameManager, showData: QuestionAnswer, for country: Country) {
-      //  addBarInfos()
+        print("XDDDDDDDDDD")
+        sceneView.hideWorkers()
+        addBarInfosWithYears(data: showData.values)
+        sceneView.showBottomBtn(withText: "Zakończ ture")
+        turnEnd = true 
     }
     
     func gameManager(_ manager: GameManager, askQuestionWithData showData: QuestionData, country: Country, player: Player) {
@@ -54,13 +58,11 @@ extension MainViewController: GameManagerDelegate {
         if let gest = gestureBarRecognizer {
             sceneView.removeGestureRecognizer(gest)
         }
-        hideActive(country: country)
-        
         sceneView.showWorkers(player: player)
         print("ustaw pracowników")
     }
     func gameManager(endTurn manager: GameManager, winners: [Player], country: Country) {
-        sceneView.hideWorkers()
+        hideActive(country: country)
     }
     func gameManager(endGame manager: GameManager) {
         

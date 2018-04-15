@@ -24,7 +24,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     // var inStartMode: Bool = true
     var inSelectCountry: Bool = false
-    
+    var turnEnd: Bool = false
     var isShowingData: Bool = false
     
     let barChartCreator = BarChartCreator()
@@ -204,12 +204,12 @@ class MainViewController: BasicViewController, MainViewDelegate {
         barChartCreator.addBarInfos(datas: datas, maxHeight: Float(questionData!.maxValue), parentNode: mapNode)
     }
     
-    func addBarInfosWithYears(data: [(Int, Double)]) {
+    func addBarInfosWithYears(data: [(Double, Int)]) {
         guard let mapNode = getMapNode() else { return }
         var datas: [(String, SCNNode)] = []
         for (indx, dat) in data.enumerated() {
             guard let node = getNode(for: "\(indx)") else { return }
-            datas.append(("\(dat.0)", node))
+            datas.append(("\(dat.1)", node))
         }
         barChartCreator.addBarInfos(datas: datas, maxHeight: Float(questionData!.maxValue), parentNode: mapNode)
     }
@@ -378,6 +378,10 @@ class MainViewController: BasicViewController, MainViewDelegate {
             //            print("schowaj bary")
             //            isShowingData = false
             //            gameManager.dataWasPresented()
+        }
+        if turnEnd {
+            turnEnd = false
+            gameManager.dataWasPresented()
         }
     }
     
