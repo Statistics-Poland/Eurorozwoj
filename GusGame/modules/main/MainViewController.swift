@@ -15,6 +15,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
     var plane: SCNNode?
     var defaultTransform: SCNMatrix4?
     let moveBy: CGFloat = 0.8
+    var lastRotation: CGFloat = 0
     
    // var inStartMode: Bool = true
     var inSelectCountry: Bool = false
@@ -82,6 +83,17 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     
     // MARK: - Actions
+//    private var initialRotation: SCNMatrix4!
+//    @objc func rotateMap(recognizer: UIRotationGestureRecognizer) {
+//        if recognizer.state == .began {
+//            initialRotation = mapNode?.transform
+//        } else if recognizer.state == .changed {
+//            mapNode?.transform = SCNMatrix4Rotate(initialRotation, Float(recognizer.rotation), 0, 1.0, 0)
+//        } else if recognizer.state == .ended {
+//        } else {
+//            mapNode?.transform = initialRotation
+//        }
+//    }
     
     @objc  func addMapToSceneView(withGestureRecognizer recognizer: UIGestureRecognizer) {
         let tapLocation = recognizer.location(in: sceneView)
@@ -297,6 +309,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
         addSelectCountryTapGestureToSceneView()
         addModels()
         gameManager.mapWasPlaced()
+      //  addRotateGestureToScenView()
     }
     
     func addPlane(at planeAnchor: ARPlaneAnchor, to node: SCNNode) {
@@ -315,6 +328,11 @@ class MainViewController: BasicViewController, MainViewDelegate {
         let addEUMapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addMapToSceneView(withGestureRecognizer:)))
         sceneView.addGestureRecognizer(addEUMapGestureRecognizer)
     }
+    
+//    func addRotateGestureToScenView() {
+//        let addEUMapRotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(rotateMap(recognizer:)))
+//        sceneView.addGestureRecognizer(addEUMapRotateGestureRecognizer)
+//    }
     
     func addSelectCountryTapGestureToSceneView() {
         let selectCountryGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectCountry(_:)))
