@@ -16,7 +16,12 @@ class MainViewController: BasicViewController, MainViewDelegate {
     var defaultTransform: SCNMatrix4?
     let moveBy: CGFloat = 0.8
     
-   // var inStartMode: Bool = true
+    var gestureBarRecognizer: UITapGestureRecognizer?
+    var gestureSetMapRecognizer: UITapGestureRecognizer?
+    var gestureSelectCountryRecognizer: UITapGestureRecognizer?
+    
+    
+    // var inStartMode: Bool = true
     var inSelectCountry: Bool = false
     
     var isShowingData: Bool = false
@@ -313,23 +318,32 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     func addEUMapTapGestureToSceneView() {
         let addEUMapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addMapToSceneView(withGestureRecognizer:)))
+        self.gestureSetMapRecognizer = addEUMapGestureRecognizer
         sceneView.addGestureRecognizer(addEUMapGestureRecognizer)
     }
     
     func addSelectCountryTapGestureToSceneView() {
+        if let gest = gestureSetMapRecognizer{
+            sceneView.removeGestureRecognizer(gest)
+        }
         let selectCountryGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectCountry(_:)))
+        self.gestureSelectCountryRecognizer = selectCountryGestrueRecognizer
         sceneView.addGestureRecognizer(selectCountryGestrueRecognizer)
     }
     
     func addSelectBarTapGestureToSceneView() {
+        if let gest = gestureSelectCountryRecognizer {
+            sceneView.removeGestureRecognizer(gest)
+        }
         let selectBarGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectBar(_:)))
+        self.gestureBarRecognizer = selectBarGestureRecognizer
         sceneView.addGestureRecognizer(selectBarGestureRecognizer)
     }
     // MARK: MainViewDelegate
     func mainView(didPressBtn view: MainView) {
-//        if inStartMode {
-//            inStartMode = false
-//        }
+        //        if inStartMode {
+        //            inStartMode = false
+        //        }
         
         if isShowingData {
             //            print("schowaj bary")
@@ -347,6 +361,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     func mainView(_ view: MainView, didPut workers: Int) {
         // ADDD CODE
+        gameManager.putWorkers(workers)
     }
 }
 
@@ -361,11 +376,11 @@ extension MainViewController: ARSCNViewDelegate  {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-//        guard !inStartMode else { return }
-//        guard plane == nil else { return }
-//        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-//        guard mapNode == nil else { return }
-//        addPlane(at: planeAnchor, to: node)
+        //        guard !inStartMode else { return }
+        //        guard plane == nil else { return }
+        //        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+        //        guard mapNode == nil else { return }
+        //        addPlane(at: planeAnchor, to: node)
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {

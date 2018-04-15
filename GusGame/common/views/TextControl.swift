@@ -60,4 +60,12 @@ class TextControl: OpacityControl {
         return CGSize(width: width, height: height)
     }
     
+    
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if super.point(inside: point, with: event) {
+            return true
+        }
+        return point.x > -CGFloat(10.0) && point.x < bounds.width + CGFloat(10.0) && point.y > -CGFloat(10.0) && point.y < bounds.height + CGFloat(10.0)
+    }
 }

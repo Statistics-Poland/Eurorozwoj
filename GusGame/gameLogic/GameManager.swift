@@ -67,6 +67,7 @@ class GameManager {
     }
     
     func putWorkers(_ count: Int) {
+//        print("lel")
         self.handle(phase: previousPutworkers.put(count))
         
     }

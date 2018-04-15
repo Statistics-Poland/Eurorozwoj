@@ -51,14 +51,19 @@ extension MainViewController: GameManagerDelegate {
     }
     
     func gameManager(_ manager: GameManager, delegateWorkers player: Player, country: Country) {
+        if let gest = gestureBarRecognizer {
+            sceneView.removeGestureRecognizer(gest)
+        }
         hideActive(country: country)
         
+        sceneView.showWorkers(player: player)
         print("ustaw pracowników")
     }
     func gameManager(endTurn manager: GameManager) {
         print("koniec tury")
     }
     func gameManager(endGame manager: GameManager) {
+        
         print("koniec gry")
     }
 }

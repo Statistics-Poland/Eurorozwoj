@@ -39,10 +39,10 @@ class DelegateWorkersView: BasicView {
         
         return workersLbl
     }()
-    private let btn: TextControl = {
+    private lazy var btn: TextControl = {
         let btn: TextControl = TextControl()
         btn.text = "Potwierdź"
-        
+        btn.addTarget(self, action: #selector(korwa), for: UIControlEvents.touchUpInside)
         return btn
     }()
 
@@ -55,7 +55,6 @@ class DelegateWorkersView: BasicView {
         addSubview(workersLbl)
         
         addSubview(btn)
-        btn.addTarget(self, action: #selector(btnAction), for: UIControlEvents.touchUpInside)
         
         layer.cornerRadius = CGFloat(8.0)
         backgroundColor = UIColor.app.grayLight
@@ -64,6 +63,9 @@ class DelegateWorkersView: BasicView {
     
     func display(player: Player) {
         workersLbl.text = "Posiadasz \(player.workers)"
+        picker.maxNumer = player.workers
+        picker.reloadAllComponents()
+        picker.restoreSelection(animated: false, selections: [0,0,0,0,0,0,0,0,0,0,0,0])
     }
     
     override func layoutSubviews() {
@@ -87,7 +89,7 @@ class DelegateWorkersView: BasicView {
         )
         
         btn.frame = CGRect(
-            x: CGFloat(8.0), y: picker.frame.maxY,
+            x: CGFloat(8.0), y: picker.frame.maxY + 40,
             width: bounds.width - CGFloat(16.0),
             height: btn.intrinsicContentSize.height
         )
@@ -114,7 +116,7 @@ class DelegateWorkersView: BasicView {
               pickerS.height -
               CGFloat(16.0) +
               btnS.height +
-              CGFloat(16.0)
+              CGFloat(16.0) + 40
         
               
         
@@ -122,7 +124,7 @@ class DelegateWorkersView: BasicView {
     }
     
     
-    @objc private func btnAction() {
+    @objc private func korwa() {
         delegate?.delegateWorkersView(self, didPut: picker.calculateValue())
     }
 }

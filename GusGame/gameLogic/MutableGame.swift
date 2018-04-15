@@ -12,10 +12,11 @@ class MutableGame: Game {
     
     private var currentCountry: Country?
     private var poligon: [Player: Int]?
+    private var modifiers: [Player: Int] = [:]
     private let dataSet: [Table<Double>]
     
     
-    init(players: Int = 4, dataSet: [Table<Double>]) {
+    init(players: Int = 2, dataSet: [Table<Double>]) {
         let players: [Player] = (0 ..< players).map {
             Player(name: "Player \($0)", color: UIColor.app.black)
         }
@@ -34,21 +35,24 @@ class MutableGame: Game {
     /// puts workers of given player on given country
     func putWorkers(on country: Country, player: Player, count: Int) {
         guard country == currentCountry else { fatalError() }
+        guard let index: Int = _players.value.index(of: player) else { fatalError() }
+        _players.value[index].workers -= count
         let previousValue: Int = poligon?[player] ?? 0
+        
         poligon?[player] = previousValue + count
     }
     
     /// aplays answers
     func applyAnswerBonus(correctAnnswers: Int, country: Country, player: Player) {
         guard country == currentCountry else { fatalError() }
-        let previousValue: Int = poligon?[player] ?? 0
-        var newValue: Int
+        
+        
         switch correctAnnswers {
-        case 0: newValue = previousValue / 2
-        case 1: newValue = previousValue
-        default: newValue = previousValue * 2
+        case 0: modifiers[player] = -1
+        case 1: modifiers[player] = 0
+        default: modifiers[player] = 1
         }
-        poligon?[player] = newValue
+        
     }
     
     
@@ -79,27 +83,41 @@ class MutableGame: Game {
         currentCountry = countriesHelper.getRandomCountry()
         if currentCountry != nil {
             poligon = [:]
+            modifiers = [:]
         } else {
             poligon = nil
+            modifiers = [:]
         }
         return currentCountry
     }
     
     
-    func endTurn() {
-        guard let poligon: [Player: Int] = poligon else { return }
-        guard let country: Country = currentCountry else { return }
+    func endTurn() -> [Player] {
+        guard var poligon: [Player: Int] = poligon else { return [] }
+        guard let country: Country = currentCountry else { return [] }
+        for (player, modifier) in modifiers {
+            if modifier == -1 {
+                poligon[player] = poligon[player]! / 2
+            } else if modifier == 1 {
+                poligon[player] = poligon[player]! * 2
+            }
+        }
+        
+        
         var maxWorkers: Int = 0
         for (_, workers) in poligon {
             maxWorkers = max(workers, maxWorkers)
         }
+        var result: [Player] = []
         for (player, workers) in poligon {
             if workers == maxWorkers {
                 if let index: Int = _players.value.index(of: player) {
                     _players.value[index].countries.append(country)
+                    result.append(_players.value[index])
                 }
             }
         }
+        return result
     }
     
     override func start() -> Phase {
