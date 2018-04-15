@@ -43,7 +43,7 @@ extension ApiService {
     }
     
     func getAllShityData() -> Promise<[Table<Double>]> {
-        return when(fulfilled: [getShityData1(), getShityData2(), getShityData3()])
+        return when(fulfilled: [getShityData1(), getShityData2()])
     }
     
     
