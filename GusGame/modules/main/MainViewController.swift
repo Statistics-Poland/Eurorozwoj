@@ -15,6 +15,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
     var plane: SCNNode?
     var defaultTransform: SCNMatrix4?
     let moveBy: CGFloat = 0.8
+    var lastRotation: CGFloat = 0
     
     var gestureBarRecognizer: UITapGestureRecognizer?
     var gestureSetMapRecognizer: UITapGestureRecognizer?
@@ -87,6 +88,17 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     
     // MARK: - Actions
+//    private var initialRotation: SCNMatrix4!
+//    @objc func rotateMap(recognizer: UIRotationGestureRecognizer) {
+//        if recognizer.state == .began {
+//            initialRotation = mapNode?.transform
+//        } else if recognizer.state == .changed {
+//            mapNode?.transform = SCNMatrix4Rotate(initialRotation, Float(recognizer.rotation), 0, 1.0, 0)
+//        } else if recognizer.state == .ended {
+//        } else {
+//            mapNode?.transform = initialRotation
+//        }
+//    }
     
     @objc  func addMapToSceneView(withGestureRecognizer recognizer: UIGestureRecognizer) {
         let tapLocation = recognizer.location(in: sceneView)
@@ -167,6 +179,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
             removeModels()
             highlight(country: country) { [weak self] in
                 self?.barChartCreator.addBars(barNodes: barNodes, for: countryNode, to: mapNode)
+                self?.addBarInfosWithValues()
             }
             addSelectBarTapGestureToSceneView()
         }
@@ -182,11 +195,21 @@ class MainViewController: BasicViewController, MainViewDelegate {
         }
     }
     
-    func addBarInfos() {
+    func addBarInfosWithValues() {
         guard let mapNode = getMapNode() else { return }
         let datas: [(String, SCNNode)] = barNodeTypes.compactMap { (barType) -> ((String, SCNNode))? in
             guard let node = getNode(for: barType.name) else { return nil }
             return ("\(barType.value)", node)
+        }
+        barChartCreator.addBarInfos(datas: datas, maxHeight: Float(questionData!.maxValue), parentNode: mapNode)
+    }
+    
+    func addBarInfosWithYears(data: [(Int, Double)]) {
+        guard let mapNode = getMapNode() else { return }
+        var datas: [(String, SCNNode)] = []
+        for (indx, dat) in data.enumerated() {
+            guard let node = getNode(for: "\(indx)") else { return }
+            datas.append(("\(dat.0)", node))
         }
         barChartCreator.addBarInfos(datas: datas, maxHeight: Float(questionData!.maxValue), parentNode: mapNode)
     }
@@ -302,6 +325,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
         addSelectCountryTapGestureToSceneView()
         addModels()
         gameManager.mapWasPlaced()
+      //  addRotateGestureToScenView()
     }
     
     func addPlane(at planeAnchor: ARPlaneAnchor, to node: SCNNode) {
@@ -321,6 +345,11 @@ class MainViewController: BasicViewController, MainViewDelegate {
         self.gestureSetMapRecognizer = addEUMapGestureRecognizer
         sceneView.addGestureRecognizer(addEUMapGestureRecognizer)
     }
+    
+//    func addRotateGestureToScenView() {
+//        let addEUMapRotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(rotateMap(recognizer:)))
+//        sceneView.addGestureRecognizer(addEUMapRotateGestureRecognizer)
+//    }
     
     func addSelectCountryTapGestureToSceneView() {
         if let gest = gestureSetMapRecognizer{
