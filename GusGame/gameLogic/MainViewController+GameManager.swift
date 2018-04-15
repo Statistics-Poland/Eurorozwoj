@@ -35,7 +35,7 @@ extension MainViewController: GameManagerDelegate {
         showActive(country: country, barNodes: barNodes)
         questionData = showData
         sceneView.showTopLbl(withText: showData.name)
-        isShowingData = true
+        
     }
     
     func gameManager(_ manager: GameManager, switchTo player: Player) {
@@ -63,6 +63,7 @@ extension MainViewController: GameManagerDelegate {
     }
     func gameManager(endTurn manager: GameManager, winners: [Player], country: Country) {
         hideActive(country: country)
+        
     }
     func gameManager(endGame manager: GameManager) {
         

@@ -63,7 +63,7 @@ class DelegateWorkersView: BasicView {
     
     func display(player: Player) {
         workersLbl.text = "Posiadasz \(player.workers)"
-        picker.maxNumer = player.workers
+        picker.maxNumer = min(player.workers, 20)
         picker.reloadAllComponents()
         picker.restoreSelection(animated: false, selections: [0,0,0,0,0,0,0,0,0,0,0,0])
     }

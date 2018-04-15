@@ -12,9 +12,11 @@ final class EndTurnPhase: Phase {
     }
     
     func commit() -> Phase {
-        
         if let country: Country = game.getNextCountry() {
-            return FindCountryPhase(country: country, player: game.firstPlayer(), game: game)
+            game.movefirstPlayer()
+            let nextPlayer: Player = game.firstPlayer()
+            let find: Phase = FindCountryPhase(country: country, player: nextPlayer, game: game)
+            return NextPlayerPhase(player: nextPlayer, nextPhase: find, game: game)
         }
         return EndGamePhase(game: game)
     }

@@ -16,13 +16,9 @@ class PresentDataPhase: Phase {
     
     
     func commit() -> Phase {
-        let nextPlayer: Player = game.firstPlayer()
+        
         
         let winners: [Player] = game.endTurn()
-        return NextPlayerPhase(
-            player: nextPlayer,
-            nextPhase: EndTurnPhase(winners: winners, country: country, game: game),
-            game: game
-        )
+        return EndTurnPhase(winners: winners, country: country, game: game)
     }
 }

@@ -15,7 +15,10 @@ protocol GameManagerDelegate: class {
 
 
 class GameManager {
-    let game: Game
+    private let _game: MutableGame
+    var game: Game {
+        return _game
+    }
     
     weak var delegate: GameManagerDelegate?
     
@@ -32,7 +35,7 @@ class GameManager {
     
     
     init(dataSet: [Table<Double>]) {
-        game = MutableGame(dataSet: dataSet)
+        _game = MutableGame(dataSet: dataSet)
     }
     
     
@@ -59,6 +62,7 @@ class GameManager {
     }
     
     func dataWasPresented() {
+        print("data byla zaznaczone")
         self.handle(phase: previousPresentData.commit())
     }
     
@@ -132,7 +136,8 @@ class GameManager {
     
     private func handle(endTurn phase: EndTurnPhase) {
         previousEndTurn = phase
-        delegate?.gameManager(endTurn: self, winners: phase.winners, country: phase.country)
+        handle(phase: previousEndTurn.commit())
+//        delegate?.gameManager(endTurn: self, winners: phase.winners, country: phase.country)
     }
     
     private func handle(endGame phase: EndGamePhase) {
