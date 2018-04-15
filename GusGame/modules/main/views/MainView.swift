@@ -83,6 +83,7 @@ class MainView: BasicARView {
         addSubview(dateSelecotrView)
         addSubview(workersView)
         addSubview(summaryView)
+        addSubview(infoView)
             
         setupPlayerViewConstraints()
         setUpTopLblConstraints()
@@ -90,7 +91,7 @@ class MainView: BasicARView {
         setupDataSelectorViewContrstraints()
         setupWorkersViewContrstraints()
         setupWSummaryViewContrstraints()
-        setupInfoViewContrstraints
+        setupInfoViewContrstraints()
         
         bottomBtn.addTarget(self, action: #selector(btnHandler), for: UIControlEvents.touchUpInside)
         workersView.delegate = self
