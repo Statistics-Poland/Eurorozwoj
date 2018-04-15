@@ -137,7 +137,7 @@ class GameManager {
     private func handle(endTurn phase: EndTurnPhase) {
         previousEndTurn = phase
         handle(phase: previousEndTurn.commit())
-//        delegate?.gameManager(endTurn: self, winners: phase.winners, country: phase.country)
+        delegate?.gameManager(endTurn: self, winners: phase.winners, country: phase.country)
     }
     
     private func handle(endGame phase: EndGamePhase) {

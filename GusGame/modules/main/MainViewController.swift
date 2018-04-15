@@ -324,7 +324,6 @@ class MainViewController: BasicViewController, MainViewDelegate {
         self.mapNode = nodeEUMap
         sceneView.scene.rootNode.addChildNode(nodeEUMap)
         plane?.removeFromParentNode()
-        addSelectCountryTapGestureToSceneView()
         addModels()
         gameManager.mapWasPlaced()
       //  addRotateGestureToScenView()

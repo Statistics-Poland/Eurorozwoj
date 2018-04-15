@@ -6,6 +6,7 @@ extension MainViewController: GameManagerDelegate {
 //        sceneView.showBottomBtn(withText: "Start")
     }
     func gameManager(_ manager: GameManager, enterSelectCountry country: Country, player: Player) {
+        addSelectCountryTapGestureToSceneView()
         sceneView.showTopLbl(withText: "Zaznacz Kraj: \(country)")
         inSelectCountry = true
     }
