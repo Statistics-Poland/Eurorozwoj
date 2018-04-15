@@ -18,7 +18,7 @@ class MutableGame: Game {
     private let dataSet: [Table<Double>]
     
     
-    init(players: Int = 2, dataSet: [Table<Double>]) {
+    init(players: Int = 4, dataSet: [Table<Double>]) {
         let players: [Player] = (0 ..< players).map {
             Player(name: "Player \($0)", color: UIColor.app.black)
         }
