@@ -12,8 +12,8 @@ class WorkersPicker: BasicPickerView, UIPickerViewDataSource, UIPickerViewDelega
     }
     
     
-    // MARK: private
-    private func calculateValue() -> Int {
+    
+    func calculateValue() -> Int {
         var value: Int = selectedRow(inComponent: 0)
         var i: Int = 1
         while i < numberOfComponents {
@@ -25,9 +25,10 @@ class WorkersPicker: BasicPickerView, UIPickerViewDataSource, UIPickerViewDelega
     }
     
     
-    private func restoreSelection(animated: Bool, selections: [Int]) {
-        for (index, elem) in selections.enumerated() {
-            selectRow(elem, inComponent: index, animated: animated)
+    // MARK: private
+    func restoreSelection(animated: Bool, selections: [Int]) {
+        for i in (0 ..< numberOfComponents) {
+            selectRow(selections[i], inComponent: i, animated: animated)
         }
     }
     

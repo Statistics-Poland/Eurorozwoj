@@ -3,8 +3,14 @@ import UIKit
 
 
 
+protocol DelegateWorkersViewDelegate: class {
+    func delegateWorkersView(_ view: DelegateWorkersView, didPut workers: Int)
+}
+
 
 class DelegateWorkersView: BasicView {
+    weak var delegate: DelegateWorkersViewDelegate?
+    
     private let picker: WorkersPicker = {
         let picker: WorkersPicker = WorkersPicker()
         
@@ -33,10 +39,10 @@ class DelegateWorkersView: BasicView {
         
         return workersLbl
     }()
-    private let btn: TextControl = {
+    private lazy var btn: TextControl = {
         let btn: TextControl = TextControl()
         btn.text = "Potwierdź"
-        
+        btn.addTarget(self, action: #selector(korwa), for: UIControlEvents.touchUpInside)
         return btn
     }()
 
@@ -52,6 +58,14 @@ class DelegateWorkersView: BasicView {
         
         layer.cornerRadius = CGFloat(8.0)
         backgroundColor = UIColor.app.grayLight
+    }
+    
+    
+    func display(player: Player) {
+        workersLbl.text = "Posiadasz \(player.workers)"
+        picker.maxNumer = min(player.workers, 20)
+        picker.reloadAllComponents()
+        picker.restoreSelection(animated: false, selections: [0,0,0,0,0,0,0,0,0,0,0,0])
     }
     
     override func layoutSubviews() {
@@ -75,7 +89,7 @@ class DelegateWorkersView: BasicView {
         )
         
         btn.frame = CGRect(
-            x: CGFloat(8.0), y: picker.frame.maxY,
+            x: CGFloat(8.0), y: picker.frame.maxY + 40,
             width: bounds.width - CGFloat(16.0),
             height: btn.intrinsicContentSize.height
         )
@@ -102,13 +116,17 @@ class DelegateWorkersView: BasicView {
               pickerS.height -
               CGFloat(16.0) +
               btnS.height +
-              CGFloat(16.0)
+              CGFloat(16.0) + 40
         
               
         
         return CGSize(width: maxW, height: height)
     }
     
+    
+    @objc private func korwa() {
+        delegate?.delegateWorkersView(self, didPut: picker.calculateValue())
+    }
 }
 
     

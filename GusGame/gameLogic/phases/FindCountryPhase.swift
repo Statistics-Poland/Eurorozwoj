@@ -18,7 +18,8 @@ final class FindCountryPhase: Phase {
         if self.country == country {
             game.addWorkers(to: player, count: bonus)
         }
-        return PutWorkersPhase(country: country, player: player, game: game)
+        
+        return QuestionPhase(table: game.getTable(for: country), country: self.country, player: player, game: game)
     }
     
     
