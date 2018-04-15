@@ -13,7 +13,7 @@ extension ApiService {
     }
     
     
-    func getShityData1() -> Promise<Table<Double>> {
+    func data1() -> Promise<Table<Double>> {
         return request(url: "\(baseUrl)/tec00115?precision=1&na_item=B1GQ&unit=CLV_PCH_PRE") {
             (jsonStr: String) -> Table<Double> in
             var table: Table<Double> = try Table<Double>(JSONString: jsonStr)
@@ -23,7 +23,7 @@ extension ApiService {
     }
     
     
-    func getShityData2() -> Promise<Table<Double>> {
+    func data2() -> Promise<Table<Double>> {
         return request(url: "\(baseUrl)/demo_gind?precision=1&indic_de=GROW") {
             (jsonStr: String) -> Table<Double> in
             var table: Table<Double> = try Table<Double>(JSONString: jsonStr)
@@ -33,7 +33,7 @@ extension ApiService {
     }
     
     
-    func getShityData3() -> Promise<Table<Double>> {
+    func data3() -> Promise<Table<Double>> {
         return request(url: "\(baseUrl)/isoc_ci_ifp_fu?indic_is=I_IDAY&precision=1&unit=PC_IND&ind_type=Y0_15") {
             (jsonStr: String) -> Table<Double> in
             var table: Table<Double> = try Table<Double>(JSONString: jsonStr)
@@ -42,8 +42,8 @@ extension ApiService {
         }
     }
     
-    func getAllShityData() -> Promise<[Table<Double>]> {
-        return when(fulfilled: [getShityData1(), getShityData2()])
+    func getAllData() -> Promise<[Table<Double>]> {
+        return when(fulfilled: [data1(), data2()])
     }
     
     

@@ -65,7 +65,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
         addEUMapTapGestureToSceneView()
         sceneView.hideTopLbl()
         sceneView.hideBottomBtn()
-        ApiService.shared.getAllShityData().done {
+        ApiService.shared.getAllData().done {
             (tables: [Table<Double>]) in
             self.gameManager = GameManager(dataSet: tables)
             }.catch {

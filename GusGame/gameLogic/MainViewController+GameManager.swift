@@ -65,6 +65,7 @@ extension MainViewController: GameManagerDelegate {
     func gameManager(endTurn manager: GameManager, winners: [Player], country: Country) {
         hideActive(country: country)
         setColor(for: country, color: winners.first?.color ?? UIColor.blue)
+        isActive = false
     }
     
     func gameManager(endGame manager: GameManager, players: [Player]) {

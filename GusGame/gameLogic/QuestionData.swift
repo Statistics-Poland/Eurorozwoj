@@ -13,7 +13,7 @@ struct QuestionData {
         let years: [Int] = [2009, 2012, 2015]
         print("todo polosowac")
         values = years.map {
-            table.valueFor(country: country, year: $0).value!
+            table.valueFor(country: country, year: $0).value ?? 0.0
         }
         self.years = years.sorted()
         maxValue = fmax(values[0], fmax(values[1], values[2]))
@@ -31,7 +31,7 @@ struct QuestionAnswer {
     
     init(table: Table<Double>, country: Country) {
         name = table.name
-        values = [2009, 2012, 2015].map { (table.valueFor(country: country, year: $0).value!, $0) }
+        values = [2009, 2012, 2015].map { (table.valueFor(country: country, year: $0).value ?? 0.0, $0) }
 
         maxValue = fmax(values[0].value, fmax(values[1].value, values[2].value))
         minValue = fmin(fmin(values[0].value, Double(0.0)), fmin(values[1].value, values[2].value))
