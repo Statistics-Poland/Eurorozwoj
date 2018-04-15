@@ -22,6 +22,8 @@ enum Value<T> {
         switch self {
         case Value<T>.value(let val):
             return val
+        case Value<T>.strange(let val):
+            return val
         default: return nil
         }
     }

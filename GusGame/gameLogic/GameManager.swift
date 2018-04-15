@@ -21,7 +21,11 @@ class GameManager {
     
     private var previousFindPhase: FindCountryPhase!
     private var previousPresentData: PresentDataPhase!
-    private var previousQuestion: QuestionPhase!
+    private var previousQuestion: QuestionPhase! {
+        didSet {
+            print("ustawiam")
+        }
+    }
     private var previousPlayer: NextPlayerPhase!
     private var previousPutworkers: PutWorkersPhase!
     private var previousEndTurn: EndTurnPhase!
@@ -68,6 +72,7 @@ class GameManager {
     }
     
     func answer(_ answer: [(year: Int, value: Double)]) {
+        print(previousQuestion != nil)
         self.handle(phase: previousQuestion.answer(answer: answer))
     }
     

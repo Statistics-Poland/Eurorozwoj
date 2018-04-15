@@ -6,6 +6,7 @@ struct QuestionData {
     let values: [Double]
     let years: [Int]
     let maxValue: Double
+    let minValue: Double
     
     init(table: Table<Double>, country: Country) {
         name = table.name
@@ -16,5 +17,6 @@ struct QuestionData {
         }
         self.years = years.sorted()
         maxValue = fmax(values[0], fmax(values[1], values[2]))
+        minValue = fmin(fmin(values[0], Double(0.0)), fmin(values[1], values[2]))
     }
 }

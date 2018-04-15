@@ -9,12 +9,13 @@
 import UIKit
 
 protocol DataBarSelectorViewDelegate: class {
-    func choose(date: Int)
+    func choose(date: Int, for nodeType: BarNodeType)
 }
 
 class DataBarSelectorView: BasicView {
     
     weak var delegate: DataBarSelectorViewDelegate?
+    private var nodeType: BarNodeType!
     
     private let stackView: UIStackView = {
        let stackView = UIStackView()
@@ -41,10 +42,11 @@ class DataBarSelectorView: BasicView {
         guard let button = recognizer.view as? TextControl else { return }
         guard let text = button.text else { return }
         guard let date = Int(text) else { return }
-        delegate?.choose(date: date)
+        delegate?.choose(date: date, for: nodeType)
     }
     
-    func setup(dates: [Int: Bool]) {
+    func setup(dates: [Int: Bool], barNodeType: BarNodeType) {
+        self.nodeType = barNodeType
         for (button, date) in zip(buttons, dates) {
             button.isEnabled = date.value
             button.backgroundColor = date.value ? UIColor.app.blueLight : UIColor.app.grayLight

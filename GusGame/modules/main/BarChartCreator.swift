@@ -31,17 +31,11 @@ class BarChartCreator {
         //addSelectBarTapGestureToSceneView()
     }
     
-    // Helpers
     
-    private func removeBarInfos(parentNode: SCNNode) {
-        let hudNodes = parentNode.childNodes.filter({ $0.name == "HUD" })
-        hudNodes.forEach({ $0.removeFromParentNode()})
-    }
-    
-    private func addBarInfo(text: String, node: SCNNode, maxHeight: Float, parentNode: SCNNode) {
+    func addBarInfo(text: String, node: SCNNode, maxHeight: Float, parentNode: SCNNode) {
         let labelNode = SKLabelNode(text: text)
         labelNode.fontSize = 50
-        labelNode.fontName = "San Fransisco"
+        labelNode.fontName = UIFont.app.standard_17.fontName
         labelNode.position = CGPoint(x: 50, y: 50)
         
         let skScene = SKScene(size: CGSize(width: 100, height: 100))
@@ -62,6 +56,14 @@ class BarChartCreator {
         parentNode.addChildNode(hudNode)
     }
     
+    
+    // Helpers
+    
+    private func removeBarInfos(parentNode: SCNNode) {
+        let hudNodes = parentNode.childNodes.filter({ $0.name == "HUD" })
+        hudNodes.forEach({ $0.removeFromParentNode()})
+    }
+
     private func addBar(barNode: BarNodeType, at position: SCNVector3, parentNode: SCNNode) {
         let box = SCNBox(width: 0.8, height: barNode.barHight, length: 0.8, chamferRadius: 0)
         box.firstMaterial?.diffuse.contents = barNode.color
@@ -71,7 +73,7 @@ class BarChartCreator {
         boxNode.opacity = 1.0
         boxNode.position = position
         parentNode.addChildNode(boxNode)
-        addBarInfo(text: "hehe", node: boxNode, maxHeight: 2.4, parentNode: parentNode)
+//        addBarInfo(text: "hehe", node: boxNode, maxHeight: 2.4, parentNode: parentNode)
     }
     
     private func removeBar(barNode: BarNodeType, parentNode: SCNNode) {

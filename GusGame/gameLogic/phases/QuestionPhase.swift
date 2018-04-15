@@ -31,7 +31,9 @@ final class QuestionPhase: Phase {
             let questionPhase: Phase = QuestionPhase(table: table, country: country, player: nextPlayer, game: game)
             return NextPlayerPhase(player: nextPlayer, nextPhase: questionPhase, game: game)
         } else {
-            return EndTurnPhase(game: game)
+            let nextPlayer: Player = game.firstPlayer()
+            let putPhase: Phase = PutWorkersPhase(country: country, player: nextPlayer, game: game)
+            return NextPlayerPhase(player: nextPlayer, nextPhase: putPhase, game: game)
         }
         
     }

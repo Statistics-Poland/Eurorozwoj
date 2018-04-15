@@ -55,7 +55,8 @@ class MutableGame: Game {
     /// gives next player, and updates players queue
     func player(after player: Player) -> Player? {
         guard let index: Int = _players.value.index(of: player) else { return nil }
-        return _players.value[index]
+        guard index + 1 < _players.value.count else { return nil }
+        return _players.value[(index + 1)]
     }
     
     

@@ -3,8 +3,14 @@ import UIKit
 
 
 
+protocol DelegateWorkersViewDelegate: class {
+    func delegateWorkersView(_ view: DelegateWorkersView, didPut workers: Int)
+}
+
 
 class DelegateWorkersView: BasicView {
+    weak var delegate: DelegateWorkersViewDelegate?
+    
     private let picker: WorkersPicker = {
         let picker: WorkersPicker = WorkersPicker()
         
@@ -49,9 +55,15 @@ class DelegateWorkersView: BasicView {
         addSubview(workersLbl)
         
         addSubview(btn)
+        btn.addTarget(self, action: #selector(btnAction), for: UIControlEvents.touchUpInside)
         
         layer.cornerRadius = CGFloat(8.0)
         backgroundColor = UIColor.app.grayLight
+    }
+    
+    
+    func display(player: Player) {
+        workersLbl.text = "Posiadasz \(player.workers)"
     }
     
     override func layoutSubviews() {
@@ -109,6 +121,10 @@ class DelegateWorkersView: BasicView {
         return CGSize(width: maxW, height: height)
     }
     
+    
+    @objc private func btnAction() {
+        delegate?.delegateWorkersView(self, didPut: picker.calculateValue())
+    }
 }
 
     
