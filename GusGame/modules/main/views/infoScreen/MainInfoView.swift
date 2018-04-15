@@ -55,22 +55,3 @@ class MainInfoView: BasicView {
     
 }
 
-let instruction: String = """
-Zasady gry:\n
-▰4 graczy;\n
-▰Każdy gracz posiada 100 pracowników;\n
-▰6 Rynków(Krajów) do zagospodarowania;\n
-▰Każdy z graczy w jednej turze może delegować maksymalnie 15 pracowników;\n
-▰ Wygrywa gracz który zajął największą liczbę państw;\n
-▰Państwo zajmuje gracz z największą liczbą pracowników na danym terytorium po wszystkich turach.\n
-▰Gracze rywalizują pomiędzy sobą w turowym muliplayerze na jedno urządzenie;\n
-▰Każdy gracz po delegowaniu pracowników na dane pole otrzymuje do poglądu trzy statystki w formie histogramów oraz nazwę statystyki;\n
-▰Następnie zadaniem gracza jest poprawnie określenie lat dla każdego z trzech prostopadłościanów histogramu, czyli danej statystyki i danego państwa;\n
-▰Gra toczy się, aż ostatni z graczy wyśle wszystkich swoich pracowników. \n
-▰Dodatkowy element służący do nauki na początku każdej tury: \n
-– wskazanie przez każdego kolejnego gracza rozpoczynającego turę właściwego państwa. \n
-Ile punktów dostaje gracz:\n
-▰Za 3 poprawne odpowiedzi - liczba pracowników razy 2\n
-▰Za 1 poprawną odpowiedź - liczba pracowników taka ja wydelegowana na początku\n
-▰Za 0 poprawnych odpowiedzi – liczba pracowników zmniejszona o połowę.\n
-"""
