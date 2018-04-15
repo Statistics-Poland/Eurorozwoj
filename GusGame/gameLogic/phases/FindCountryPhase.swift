@@ -19,7 +19,7 @@ final class FindCountryPhase: Phase {
             game.addWorkers(to: player, count: bonus)
         }
         
-        return QuestionPhase(table: game.getTable(for: country), country: country, player: player, game: game)
+        return QuestionPhase(table: game.getTable(for: country), country: self.country, player: player, game: game)
     }
     
     

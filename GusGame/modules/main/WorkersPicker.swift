@@ -26,9 +26,9 @@ class WorkersPicker: BasicPickerView, UIPickerViewDataSource, UIPickerViewDelega
     
     
     // MARK: private
-    private func restoreSelection(animated: Bool, selections: [Int]) {
-        for (index, elem) in selections.enumerated() {
-            selectRow(elem, inComponent: index, animated: animated)
+    func restoreSelection(animated: Bool, selections: [Int]) {
+        for i in (0 ..< numberOfComponents) {
+            selectRow(selections[i], inComponent: i, animated: animated)
         }
     }
     

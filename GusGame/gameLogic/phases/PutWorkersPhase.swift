@@ -20,14 +20,10 @@ final class PutWorkersPhase: Phase {
         } else {
             let nextPlayer: Player = game.firstPlayer()
             
-            let questionPhase: Phase = PresentDataPhase(
-                table: game.getTable(for: country),
-                country: country,
-                game: game
-            )
+            let winners: [Player] = game.endTurn()
             return NextPlayerPhase(
                 player: nextPlayer,
-                nextPhase: questionPhase,
+                nextPhase: EndTurnPhase(winners: winners, country: country, game: game),
                 game: game
             )
         }

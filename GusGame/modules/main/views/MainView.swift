@@ -52,8 +52,9 @@ class MainView: BasicARView {
     private let workersView: DelegateWorkersView = {
         () -> DelegateWorkersView in
         let workersView: DelegateWorkersView = DelegateWorkersView()
-        
-        workersView.isHidden = true
+        workersView.translatesAutoresizingMaskIntoConstraints = false
+        workersView.isUserInteractionEnabled = false
+        workersView.alpha = CGFloat(0.0)
         return workersView
     }()
     
