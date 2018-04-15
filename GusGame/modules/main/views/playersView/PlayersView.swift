@@ -11,7 +11,7 @@ import UIKit
 fileprivate var swipeDownGesture: String = "swipeDownGesture"
 fileprivate var arrowTapName: String = "arrowTapName"
 
-class PlayersView: UIView {
+class PlayersView: BasicView {
     
     var players: [PlayerView] = []
     var playersNumber: Int = 4
@@ -29,19 +29,7 @@ class PlayersView: UIView {
     var arrowIcon: UIImageView = UIImageView()
     var arrowView: UIView = UIView()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        initialize()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initialize()
-    }
-    
-    
-    
-    func initialize() {
+    override func initialize() {
         
         populatePlayers()
         setArrow()
@@ -54,8 +42,6 @@ class PlayersView: UIView {
         
         addGestures()
         
-//        let gesture = UIGestureRecognizer()
-//        gesture.
     }
     
     func setup(playerModels: [Player]) {
@@ -77,7 +63,6 @@ class PlayersView: UIView {
     }
     
     func setArrow() {
-        print("ustawiam arrow")
         arrowView.bounds.size.width = 20
         arrowView.bounds.size.height = 20
         arrowView.center.y = (players.last?.center.y)!
@@ -94,7 +79,6 @@ class PlayersView: UIView {
     func addGestures () {
         let collapseSwipeGesture: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(collapse))
         collapseSwipeGesture.direction = .up
-//        collapseSwipeGesture.delegate = self
         self.addGestureRecognizer(collapseSwipeGesture)
         
         let expandSwipeGesture: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(expandPlayers))
@@ -112,7 +96,6 @@ class PlayersView: UIView {
     @objc func collapse () { collapsePlayers(withDuration: animationDuration) }
     
     @objc func collapsePlayers(withDuration duration: TimeInterval) {
-        print("collapse animation")
         UIView.animate(withDuration: duration, delay: 0.0, options: [],
                        animations: {
                         self.arrowIcon.transform = CGAffineTransform.init(rotationAngle: CGFloat.pi)
@@ -128,7 +111,6 @@ class PlayersView: UIView {
                             player.transform = CGAffineTransform.init(translationX: 0.0, y: -CGFloat(index)*player.frame.height)
                             let currentPlayer = self.subviews.first as! PlayerView
                             if currentPlayer != player {
-                                print(player)
                                 player.alpha = 0.0 }
                             },
                            completion: nil)
@@ -137,7 +119,6 @@ class PlayersView: UIView {
     }
     
     @objc func expandPlayers() {
-        print("expand animation")
         UIView.animate(withDuration: animationDuration, delay: 0.0, options: [],
                        animations: {
                         self.arrowIcon.transform = CGAffineTransform.identity
@@ -155,7 +136,6 @@ class PlayersView: UIView {
         }
     }
     @objc func arrowExpandCollapse () {
-        print("tapgesture Man")
         if players.last?.transform == CGAffineTransform.identity {
             collapsePlayers(withDuration: animationDuration)
         } else {
