@@ -5,7 +5,7 @@ protocol GameManagerDelegate: class {
     func gameManager(showFindSurface manager: GameManager)
     func gameManager(_ manager: GameManager, enterSelectCountry country: Country, player: Player)
     func gameManager(invalidCountrySelected manager: GameManager)
-    func gameManager(_ manager: GameManager, showData: QuestionData, for country: Country)
+    func gameManager(_ manager: GameManager, showData: QuestionAnswer, for country: Country)
     func gameManager(_ manager: GameManager, askQuestionWithData data: QuestionData, country: Country, player: Player)
     func gameManager(_ manager: GameManager, switchTo player: Player)
     func gameManager(_ manager: GameManager, delegateWorkers player: Player, country: Country)
@@ -111,7 +111,7 @@ class GameManager {
     
     private func handle(presenrData phase: PresentDataPhase) {
         previousPresentData = phase
-        delegate?.gameManager(self, showData: phase.questionData, for: phase.country)
+        delegate?.gameManager(self, showData: phase.questionAnswer, for: phase.country)
     }
     
     private func handle(question phase: QuestionPhase) {

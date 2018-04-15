@@ -14,7 +14,7 @@ extension MainViewController: GameManagerDelegate {
         sceneView.layer.add(Animations.shakeAnimation, forKey: "shakeItBycz")
         
     }
-    func gameManager(_ manager: GameManager, showData: QuestionData, for country: Country) {
+    func gameManager(_ manager: GameManager, showData: QuestionAnswer, for country: Country) {
       //  addBarInfos()
     }
     

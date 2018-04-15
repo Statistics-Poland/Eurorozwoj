@@ -32,7 +32,7 @@ final class QuestionPhase: Phase {
             return NextPlayerPhase(player: nextPlayer, nextPhase: questionPhase, game: game)
         } else {
             let nextPlayer: Player = game.firstPlayer()
-            let putPhase: Phase = PutWorkersPhase(country: country, player: nextPlayer, game: game)
+            let putPhase: Phase = PutWorkersPhase(country: country, player: nextPlayer, game: game, table: table)
             return NextPlayerPhase(player: nextPlayer, nextPhase: putPhase, game: game)
         }
         
