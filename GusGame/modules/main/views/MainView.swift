@@ -7,6 +7,7 @@ protocol MainViewDelegate: class {
     func mainView(didPressBtn view: MainView)
     func choose(date: Int, for nodeType: BarNodeType)
     func mainView(_ view: MainView, didPut workers: Int)
+    func mainView(showInfo view: MainView)
 }
 
 class MainView: BasicARView {
@@ -20,6 +21,7 @@ class MainView: BasicARView {
         playerView.isUserInteractionEnabled = false
         playerView.alpha = 0.0
         playerView.translatesAutoresizingMaskIntoConstraints = false
+        playerView.scrollLbl.text = instruction
         return playerView
     }()
     
@@ -75,6 +77,14 @@ class MainView: BasicARView {
     }()
     
     
+    private let info: InfoViewIcon = {
+        let info: InfoViewIcon = InfoViewIcon()
+        info.translatesAutoresizingMaskIntoConstraints = false
+        return info
+    }()
+
+    
+    
     override func initialize() {
         super.initialize()
         addSubview(playerView)
@@ -84,6 +94,7 @@ class MainView: BasicARView {
         addSubview(workersView)
         addSubview(summaryView)
         addSubview(infoView)
+        addSubview(info)
             
         setupPlayerViewConstraints()
         setUpTopLblConstraints()
@@ -92,8 +103,10 @@ class MainView: BasicARView {
         setupWorkersViewContrstraints()
         setupWSummaryViewContrstraints()
         setupInfoViewContrstraints()
+        setupnfoinconConstraints()
         
         bottomBtn.addTarget(self, action: #selector(btnHandler), for: UIControlEvents.touchUpInside)
+        info.addTarget(self, action: #selector(showInfo), for: UIControlEvents.touchUpInside)
         workersView.delegate = self
     }
     
@@ -256,9 +269,21 @@ class MainView: BasicARView {
         infoView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
     }
     
+    
+    private func setupnfoinconConstraints() {
+        info.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        info.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
+    }
+    
+    
     @objc private func btnHandler() {
         print("klikłem")
         gus_delegate?.mainView(didPressBtn: self)
+    }
+    
+    
+    @objc private func showInfo() {
+        gus_delegate?.mainView(showInfo: self)
     }
 }
 

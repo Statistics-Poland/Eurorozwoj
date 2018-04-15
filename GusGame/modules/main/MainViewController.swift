@@ -397,6 +397,10 @@ class MainViewController: BasicViewController, MainViewDelegate {
         // ADDD CODE
         gameManager.putWorkers(workers)
     }
+    
+    func mainView(showInfo view: MainView) {
+        sceneView.showInfoView()
+    }
 }
 
 extension MainViewController: ARSCNViewDelegate  {

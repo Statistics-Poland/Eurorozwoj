@@ -15,6 +15,7 @@ class InfoViewIcon: OpacityControl {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.app.standard_21
         label.text = "i"
+        label.textColor = .white
         label.textAlignment = NSTextAlignment.center
         
         return label
@@ -28,22 +29,22 @@ class InfoViewIcon: OpacityControl {
     }
     
     private func setView() {
-        let height: CGFloat = 50
-        self.layer.cornerRadius = height / 2.0
+        
         self.clipsToBounds = true
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = 3.0
     }
     
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 50, height: 50)
+        return CGSize(width: 40, height: 40)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         label.frame = bounds
+        self.layer.cornerRadius = bounds.height / 2.0
     }
     
     private func addLabelConstraints() {
