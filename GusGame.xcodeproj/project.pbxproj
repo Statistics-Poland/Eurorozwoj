@@ -56,6 +56,9 @@
 		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
 		9E6F6A9E2082167100635874 /* float4x4 Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9D2082167100635874 /* float4x4 Extension.swift */; };
 		9E6F6AA020823F1600635874 /* BarNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9F20823F1600635874 /* BarNodeType.swift */; };
+		9EA0AF242083709B0061E21B /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0AF1F2083709A0061E21B /* InfoView.swift */; };
+		9EA0AF252083709B0061E21B /* ScrollLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0AF202083709A0061E21B /* ScrollLabel.swift */; };
+		9EA0AF262083709B0061E21B /* MainInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA0AF212083709A0061E21B /* MainInfoView.swift */; };
 		9EE906992082A1EF000D9602 /* BarChartCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE906982082A1EF000D9602 /* BarChartCreator.swift */; };
 		9EE9069B2082A4E5000D9602 /* ElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9069A2082A4E5000D9602 /* ElementModel.swift */; };
 		9EE9069E2082AFD7000D9602 /* DataBarSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9069D2082AFD7000D9602 /* DataBarSelectorView.swift */; };
@@ -135,6 +138,9 @@
 		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E6F6A9D2082167100635874 /* float4x4 Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "float4x4 Extension.swift"; sourceTree = "<group>"; };
 		9E6F6A9F20823F1600635874 /* BarNodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarNodeType.swift; sourceTree = "<group>"; };
+		9EA0AF1F2083709A0061E21B /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		9EA0AF202083709A0061E21B /* ScrollLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollLabel.swift; sourceTree = "<group>"; };
+		9EA0AF212083709A0061E21B /* MainInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInfoView.swift; sourceTree = "<group>"; };
 		9EE906982082A1EF000D9602 /* BarChartCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCreator.swift; sourceTree = "<group>"; };
 		9EE9069A2082A4E5000D9602 /* ElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementModel.swift; sourceTree = "<group>"; };
 		9EE9069D2082AFD7000D9602 /* DataBarSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBarSelectorView.swift; sourceTree = "<group>"; };
@@ -448,10 +454,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9EA0AF1D2083709A0061E21B /* infoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9EA0AF1F2083709A0061E21B /* InfoView.swift */,
+				9EA0AF202083709A0061E21B /* ScrollLabel.swift */,
+				9EA0AF212083709A0061E21B /* MainInfoView.swift */,
+			);
+			name = infoScreen;
+			path = GusGame/modules/main/views/infoScreen;
+			sourceTree = SOURCE_ROOT;
+		};
 		9EE9069C2082AF9B000D9602 /* DataBarSelectorView */ = {
 			isa = PBXGroup;
 			children = (
 				9EE9069D2082AFD7000D9602 /* DataBarSelectorView.swift */,
+				9EA0AF1D2083709A0061E21B /* infoScreen */,
 				9EE906A82083590B000D9602 /* gameSummary */,
 			);
 			path = DataBarSelectorView;
@@ -662,12 +680,14 @@
 				34EC6E9620822F3B00DF5087 /* PutWorkersPhase.swift in Sources */,
 				34DC1B632081FD9C00AF0996 /* TextControl.swift in Sources */,
 				34913BC1207F7FBB0031CD6F /* ApiService+euroData.swift in Sources */,
+				9EA0AF252083709B0061E21B /* ScrollLabel.swift in Sources */,
 				34F7101820823D890094EC9F /* EndTurnPhase.swift in Sources */,
 				34DC1B652081FF7C00AF0996 /* UIColor+appColor.swift in Sources */,
 				34DC1B5E2081FBE500AF0996 /* BasicViews.swift in Sources */,
 				34A9F2E82082AA0300C192B1 /* DelegateWorkersView.swift in Sources */,
 				34DC1B69208202D500AF0996 /* CountriesHelper.swift in Sources */,
 				34A9F2E72082AA0300C192B1 /* WorkersPicker.swift in Sources */,
+				9EA0AF242083709B0061E21B /* InfoView.swift in Sources */,
 				34A9F2F82082AA6000C192B1 /* PlayersView.swift in Sources */,
 				34EC6E9420822E1C00DF5087 /* MutableGame.swift in Sources */,
 				9EE906AB2083590B000D9602 /* SummaryView.swift in Sources */,
@@ -683,6 +703,7 @@
 				34913BBF207F759D0031CD6F /* ApiService.swift in Sources */,
 				34DC1B672081FFC000AF0996 /* UIFont+appFont.swift in Sources */,
 				34EC6E9A2082336F00DF5087 /* NextPlayerPhase.swift in Sources */,
+				9EA0AF262083709B0061E21B /* MainInfoView.swift in Sources */,
 				34EC6E98208231B700DF5087 /* QuestionPhase.swift in Sources */,
 				9EE906992082A1EF000D9602 /* BarChartCreator.swift in Sources */,
 				9EE9069E2082AFD7000D9602 /* DataBarSelectorView.swift in Sources */,

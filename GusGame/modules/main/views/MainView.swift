@@ -15,6 +15,14 @@ class MainView: BasicARView {
     
     private let disposeBag = DisposeBag()
     
+    private let infoView: InfoView = {
+        let playerView = InfoView()
+        playerView.isUserInteractionEnabled = false
+        playerView.alpha = 0.0
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        return playerView
+    }()
+    
     private let summaryView: SummaryView = {
         let playerView = SummaryView()
         playerView.isUserInteractionEnabled = false
@@ -75,16 +83,32 @@ class MainView: BasicARView {
         addSubview(dateSelecotrView)
         addSubview(workersView)
         addSubview(summaryView)
-        
+            
         setupPlayerViewConstraints()
         setUpTopLblConstraints()
         setUpBottomBtnConstraints()
         setupDataSelectorViewContrstraints()
         setupWorkersViewContrstraints()
         setupWSummaryViewContrstraints()
+        setupInfoViewContrstraints
         
         bottomBtn.addTarget(self, action: #selector(btnHandler), for: UIControlEvents.touchUpInside)
         workersView.delegate = self
+    }
+    
+    
+    func hideInfoView() {
+        UIView.animate(withDuration: 0.3) {
+            self.infoView.alpha = 0.0
+            self.infoView.isUserInteractionEnabled = false
+        }
+    }
+    
+    func showInfoView() {
+        UIView.animate(withDuration: 0.3) {
+            self.infoView.alpha = 1.0
+            self.infoView.isUserInteractionEnabled = true
+        }
     }
     
     func hideSummary() {
@@ -224,13 +248,17 @@ class MainView: BasicARView {
         summaryView.heightAnchor.constraint(equalToConstant: 180).isActive = true
     }
     
+    private func setupInfoViewContrstraints() {
+        infoView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        infoView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8).isActive = true
+        infoView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
+    }
+    
     @objc private func btnHandler() {
         print("klikłem")
         gus_delegate?.mainView(didPressBtn: self)
     }
-    
-    
-    
 }
 
 extension MainView: DataBarSelectorViewDelegate {
