@@ -9,7 +9,7 @@ protocol GameManagerDelegate: class {
     func gameManager(_ manager: GameManager, askQuestionWithData data: QuestionData, country: Country, player: Player)
     func gameManager(_ manager: GameManager, switchTo player: Player)
     func gameManager(_ manager: GameManager, delegateWorkers player: Player, country: Country)
-    func gameManager(endTurn manager: GameManager)
+    func gameManager(endTurn manager: GameManager, winners: [Player], country: Country)
     func gameManager(endGame manager: GameManager)
 }
 
@@ -132,7 +132,7 @@ class GameManager {
     
     private func handle(endTurn phase: EndTurnPhase) {
         previousEndTurn = phase
-        delegate?.gameManager(endTurn: self)
+        delegate?.gameManager(endTurn: self, winners: phase.winners, country: phase.country)
     }
     
     private func handle(endGame phase: EndGamePhase) {

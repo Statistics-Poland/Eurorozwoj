@@ -59,8 +59,8 @@ extension MainViewController: GameManagerDelegate {
         sceneView.showWorkers(player: player)
         print("ustaw pracowników")
     }
-    func gameManager(endTurn manager: GameManager) {
-        print("koniec tury")
+    func gameManager(endTurn manager: GameManager, winners: [Player], country: Country) {
+        sceneView.hideWorkers()
     }
     func gameManager(endGame manager: GameManager) {
         
