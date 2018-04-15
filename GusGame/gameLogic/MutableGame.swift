@@ -3,7 +3,7 @@ import RxSwift
 
 
 class MutableGame: Game {
-    private let _players: Variable<[Player]>
+    let _players: Variable<[Player]>
     private let countriesHelper: CountriesHelper = CountriesHelper()
     
     private var _firstPlayer: Player!

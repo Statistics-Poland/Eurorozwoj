@@ -20,6 +20,8 @@ class SummaryView: BasicView {
         
        return stackView
     }()
+    var views: [PositionView] = []
+    
     
     let playersNo: Int = 4
     
@@ -32,12 +34,20 @@ class SummaryView: BasicView {
         for player in 1...playersNo { //for player in players??
             let positionView: PositionView = PositionView()
             positionView.translatesAutoresizingMaskIntoConstraints = false
-//            positionView.setup() // na razie puste
+            views.append(positionView)
             summaryStackView.addArrangedSubview(positionView)
         }
         
         addSummaryStackViewConstraints()
         
+    }
+    
+    func setup(data: [(Player, Int)]) {
+        var re = data
+        re.sort(by: { $0.1 < $1.1 })
+        for (view, player) in zip(views, re) {
+            view.setup(player: player.0, position: player.1)
+        }
     }
     
     func addSummaryStackViewConstraints() {

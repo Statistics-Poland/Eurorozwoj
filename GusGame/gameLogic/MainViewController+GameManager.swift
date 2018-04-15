@@ -64,10 +64,15 @@ extension MainViewController: GameManagerDelegate {
     }
     func gameManager(endTurn manager: GameManager, winners: [Player], country: Country) {
         hideActive(country: country)
-        
+        setColor(for: country, color: winners.first?.color ?? UIColor.blue)
     }
-    func gameManager(endGame manager: GameManager) {
-        
-        print("koniec gry")
+    
+    func gameManager(endGame manager: GameManager, players: [Player]) {
+        let playersHEH = players.sorted(by: { $0.points > $1.points })
+        var heh: [(Player, Int)] = []
+        for (index, player) in playersHEH.enumerated() {
+            heh.append((player, index + 1))
+        }
+          sceneView.showSummary(players: heh)
     }
 }

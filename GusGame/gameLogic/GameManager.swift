@@ -10,12 +10,12 @@ protocol GameManagerDelegate: class {
     func gameManager(_ manager: GameManager, switchTo player: Player)
     func gameManager(_ manager: GameManager, delegateWorkers player: Player, country: Country)
     func gameManager(endTurn manager: GameManager, winners: [Player], country: Country)
-    func gameManager(endGame manager: GameManager)
+    func gameManager(endGame manager: GameManager, players: [Player])
 }
 
 
 class GameManager {
-    private let _game: MutableGame
+    let _game: MutableGame
     var game: Game {
         return _game
     }
@@ -141,6 +141,6 @@ class GameManager {
     }
     
     private func handle(endGame phase: EndGamePhase) {
-        delegate?.gameManager(endGame: self)
+        delegate?.gameManager(endGame: self, players: _game._players.value)
     }
 }

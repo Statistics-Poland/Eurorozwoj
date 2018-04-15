@@ -15,6 +15,14 @@ class MainView: BasicARView {
     
     private let disposeBag = DisposeBag()
     
+    private let summaryView: SummaryView = {
+        let playerView = SummaryView()
+        playerView.isUserInteractionEnabled = false
+        playerView.alpha = 0.0
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        return playerView
+    }()
+    
     private let playerView: PlayersView = {
         let playerView = PlayersView()
         playerView.isUserInteractionEnabled = false
@@ -66,15 +74,32 @@ class MainView: BasicARView {
         addSubview(bottomBtn)
         addSubview(dateSelecotrView)
         addSubview(workersView)
+        addSubview(summaryView)
         
         setupPlayerViewConstraints()
         setUpTopLblConstraints()
         setUpBottomBtnConstraints()
         setupDataSelectorViewContrstraints()
         setupWorkersViewContrstraints()
+        setupWSummaryViewContrstraints()
         
         bottomBtn.addTarget(self, action: #selector(btnHandler), for: UIControlEvents.touchUpInside)
         workersView.delegate = self
+    }
+    
+    func hideSummary() {
+        UIView.animate(withDuration: 0.3) {
+            self.summaryView.alpha = 0.0
+            self.summaryView.isUserInteractionEnabled = false
+        }
+    }
+    
+    func showSummary(players: [(Player, Int)]) {
+        summaryView.setup(data: players)
+        UIView.animate(withDuration: 0.3) {
+            self.summaryView.alpha = 1.0
+            self.summaryView.isUserInteractionEnabled = true
+        }
     }
     
     func hideWorkers() {
@@ -191,6 +216,12 @@ class MainView: BasicARView {
     private func setupWorkersViewContrstraints() {
         workersView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         workersView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    }
+    
+    private func setupWSummaryViewContrstraints() {
+        summaryView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        summaryView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        summaryView.heightAnchor.constraint(equalToConstant: 180).isActive = true
     }
     
     @objc private func btnHandler() {

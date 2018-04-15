@@ -27,7 +27,7 @@ extension ApiService {
         return request(url: "\(baseUrl)/demo_gind?precision=1&indic_de=GROW") {
             (jsonStr: String) -> Table<Double> in
             var table: Table<Double> = try Table<Double>(JSONString: jsonStr)
-            table.name = "Wzrost ludności"
+            table.name = "Przyrost ludności"
             return table
         }
     }

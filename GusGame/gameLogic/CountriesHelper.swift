@@ -30,12 +30,16 @@ class CountriesHelper {
 //        Country.slovenia,
 //        Country.slovakia,
 //        Country.unitedKingdom
+        
+        
+        
+        
         Country.poland,
-        Country.germany,
-        Country.spain,
-        Country.italy,
-        Country.sweden,
-        Country.france,
+//        Country.germany,
+//        Country.spain,
+//        Country.italy,
+//        Country.sweden,
+//        Country.france,
     ]
     
     // it's easier to get random element form array than set
