@@ -14,8 +14,8 @@ class BarChartCreator {
     // Actions
     
     func addBarInfos(datas: [(String, SCNNode)], maxHeight: Float, parentNode: SCNNode) {
-        for data in datas {
-            addBarInfo(text: data.0, node: data.1, maxHeight: maxHeight, parentNode: parentNode)
+        for (index, data) in datas.enumerated() {
+            addBarInfo(text: data.0, node: data.1, maxHeight: maxHeight, parentNode: parentNode, color: colors[index])
         }
     }
     
@@ -42,9 +42,10 @@ class BarChartCreator {
     
     // Helpers
     
-    private func addBarInfo(text: String, node: SCNNode, maxHeight: Float, parentNode: SCNNode) {
+    private func addBarInfo(text: String, node: SCNNode, maxHeight: Float, parentNode: SCNNode, color: UIColor) {
         let labelNode = SKLabelNode(text: text)
-        labelNode.fontSize = 50
+        labelNode.fontSize = 40
+        labelNode.fontColor = color
         labelNode.fontName = UIFont.app.standard_17.fontName
         labelNode.position = CGPoint(x: 50, y: 50)
         
@@ -52,7 +53,7 @@ class BarChartCreator {
         skScene.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
         skScene.addChild(labelNode)
         
-        let plane = SCNPlane(width: 0.5, height: 0.5)
+        let plane = SCNPlane(width: 1.0, height: 1.0)
         let material = SCNMaterial()
         material.lightingModel = SCNMaterial.LightingModel.constant
         material.isDoubleSided = true
@@ -61,7 +62,7 @@ class BarChartCreator {
         
         let hudNode = SCNNode(geometry: plane)
         hudNode.name = "HUD"
-        hudNode.position = SCNVector3(x: node.position.x, y: node.position.y + maxHeight, z: node.position.z)
+        hudNode.position = SCNVector3(x: node.position.x, y: node.position.y + 2.3, z: node.position.z)
         hudNode.rotation = SCNVector4(x: 1, y: 0, z: 0, w: 3.14159265)
         parentNode.addChildNode(hudNode)
     }
