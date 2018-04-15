@@ -28,7 +28,7 @@ extension MainViewController: GameManagerDelegate {
         for (index, data) in showData.values.enumerated() {
             print("data: \(data)")
             let barheight = ( maxRealHeight / (showData.maxValue - showData.minValue)) * (data - showData.minValue)
-            let barNode = BarNodeType(name: "\(index)", value: data, barHight: CGFloat(barheight))
+            let barNode = BarNodeType(name: "\(index)", value: data, barHight: CGFloat(barheight), color: colors[index])
             print(barNode)
             barNodes.append(barNode)
         }

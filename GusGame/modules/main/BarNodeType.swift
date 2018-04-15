@@ -13,6 +13,6 @@ struct BarNodeType {
     let name: String
     let value: Double
     let barHight: CGFloat
-    let color: UIColor = UIColor.app.blueLight
+    let color: UIColor
 
 }

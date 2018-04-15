@@ -5,11 +5,12 @@ import ARKit
 import PromiseKit
 import RxSwift
 
+let colors = [UIColor.app.blueLight, UIColor.app.greenLight, UIColor.app.redLight]
 
 class MainViewController: BasicViewController, MainViewDelegate {
     
     // MARK: - Properties
-    
+
     var mapNode: SCNNode?
     var elementsNodes: [SCNNode] = []
     var plane: SCNNode?
@@ -179,7 +180,7 @@ class MainViewController: BasicViewController, MainViewDelegate {
             removeModels()
             highlight(country: country) { [weak self] in
                 self?.barChartCreator.addBars(barNodes: barNodes, for: countryNode, to: mapNode)
-                self?.addBarInfosWithValues()
+           //     self?.addBarInfosWithValues()
             }
             addSelectBarTapGestureToSceneView()
         }
@@ -195,17 +196,18 @@ class MainViewController: BasicViewController, MainViewDelegate {
         }
     }
     
-    func addBarInfosWithValues() {
-        guard let mapNode = getMapNode() else { return }
-        let datas: [(String, SCNNode)] = barNodeTypes.compactMap { (barType) -> ((String, SCNNode))? in
-            guard let node = getNode(for: barType.name) else { return nil }
-            return ("\(barType.value)", node)
-        }
-        barChartCreator.addBarInfos(datas: datas, maxHeight: Float(questionData!.maxValue), parentNode: mapNode)
-    }
+//    func addBarInfosWithValues() {
+//        guard let mapNode = getMapNode() else { return }
+//        let datas: [(String, SCNNode)] = barNodeTypes.compactMap { (barType) -> ((String, SCNNode))? in
+//            guard let node = getNode(for: barType.name) else { return nil }
+//            return ("\(barType.value)", node)
+//        }
+//        barChartCreator.addBarInfos(datas: datas, maxHeight: Float(questionData!.maxValue), parentNode: mapNode)
+//    }
     
     func addBarInfosWithYears(data: [(Double, Int)]) {
         guard let mapNode = getMapNode() else { return }
+        barChartCreator.removeBarInfos(parentNode: mapNode)
         var datas: [(String, SCNNode)] = []
         for (indx, dat) in data.enumerated() {
             guard let node = getNode(for: "\(indx)") else { return }
