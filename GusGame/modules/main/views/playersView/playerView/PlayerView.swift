@@ -12,7 +12,7 @@ protocol PlayerViewDelegate: class{
     func playerView(didPressArrow: UIView)
 }
 
-class PlayerView: UIView {
+class PlayerView: BasicView {
     
     
     weak var delegate: PlayerViewDelegate?

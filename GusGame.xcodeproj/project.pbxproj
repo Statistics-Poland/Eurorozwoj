@@ -26,8 +26,6 @@
 		34A9F2E42082A9AA00C192B1 /* Int+logarithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9F2E32082A9AA00C192B1 /* Int+logarithm.swift */; };
 		34A9F2E72082AA0300C192B1 /* WorkersPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9F2E52082AA0300C192B1 /* WorkersPicker.swift */; };
 		34A9F2E82082AA0300C192B1 /* DelegateWorkersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9F2E62082AA0300C192B1 /* DelegateWorkersView.swift */; };
-		34A9F2F42082AA6000C192B1 /* InfoScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9F2EB2082AA6000C192B1 /* InfoScreenView.swift */; };
-		34A9F2F52082AA6000C192B1 /* InfoScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A9F2EC2082AA6000C192B1 /* InfoScreenView.xib */; };
 		34A9F2F62082AA6000C192B1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9F2EF2082AA6000C192B1 /* PlayerView.swift */; };
 		34A9F2F72082AA6000C192B1 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A9F2F02082AA6000C192B1 /* PlayerView.xib */; };
 		34A9F2F82082AA6000C192B1 /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9F2F12082AA6000C192B1 /* PlayersView.swift */; };
@@ -60,6 +58,14 @@
 		9EE906992082A1EF000D9602 /* BarChartCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE906982082A1EF000D9602 /* BarChartCreator.swift */; };
 		9EE9069B2082A4E5000D9602 /* ElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9069A2082A4E5000D9602 /* ElementModel.swift */; };
 		E90AA02EB5C8C27B7BCADBA2 /* Pods_GusGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */; };
+		F151FD6D2082ADF90060B32F /* InfoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151FD6C2082ADF90060B32F /* InfoScreenViewController.swift */; };
+		F151FD712082B9EA0060B32F /* ScrollLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151FD702082B9EA0060B32F /* ScrollLabel.swift */; };
+		F151FD732082BF180060B32F /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151FD722082BF180060B32F /* InfoView.swift */; };
+		F151FD752082C8DF0060B32F /* MainInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151FD742082C8DF0060B32F /* MainInfoView.swift */; };
+		F151FD772082E46F0060B32F /* InfoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F151FD762082E46F0060B32F /* InfoScreen.storyboard */; };
+		F151FD7A20832DAE0060B32F /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151FD7920832DAE0060B32F /* PositionView.swift */; };
+		F151FD7C208338DA0060B32F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151FD7B208338DA0060B32F /* SummaryView.swift */; };
+		F151FD7E20834D7D0060B32F /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151FD7D20834D7D0060B32F /* LaunchScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +103,6 @@
 		34A9F2E32082A9AA00C192B1 /* Int+logarithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+logarithm.swift"; sourceTree = "<group>"; };
 		34A9F2E52082AA0300C192B1 /* WorkersPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkersPicker.swift; sourceTree = "<group>"; };
 		34A9F2E62082AA0300C192B1 /* DelegateWorkersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateWorkersView.swift; sourceTree = "<group>"; };
-		34A9F2EB2082AA6000C192B1 /* InfoScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreenView.swift; sourceTree = "<group>"; };
-		34A9F2EC2082AA6000C192B1 /* InfoScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoScreenView.xib; sourceTree = "<group>"; };
 		34A9F2EF2082AA6000C192B1 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		34A9F2F02082AA6000C192B1 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		34A9F2F12082AA6000C192B1 /* PlayersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,14 @@
 		9EE9069A2082A4E5000D9602 /* ElementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementModel.swift; sourceTree = "<group>"; };
 		AF6F809B0B18D09B6BB90295 /* Pods-GusGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGame/Pods-GusGame.release.xcconfig"; sourceTree = "<group>"; };
 		D3C95457F1D35C764814FC41 /* Pods_GusGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F151FD6C2082ADF90060B32F /* InfoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenViewController.swift; sourceTree = "<group>"; };
+		F151FD702082B9EA0060B32F /* ScrollLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollLabel.swift; sourceTree = "<group>"; };
+		F151FD722082BF180060B32F /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		F151FD742082C8DF0060B32F /* MainInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoView.swift; sourceTree = "<group>"; };
+		F151FD762082E46F0060B32F /* InfoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoScreen.storyboard; sourceTree = "<group>"; };
+		F151FD7920832DAE0060B32F /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
+		F151FD7B208338DA0060B32F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		F151FD7D20834D7D0060B32F /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +307,7 @@
 		34A9F2E92082AA6000C192B1 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				F151FD7820832D590060B32F /* gameSummary */,
 				34A9F2EA2082AA6000C192B1 /* infoScreen */,
 				34A9F2ED2082AA6000C192B1 /* playersView */,
 				34A9F2F22082AA6000C192B1 /* MainView.swift */,
@@ -306,8 +319,11 @@
 		34A9F2EA2082AA6000C192B1 /* infoScreen */ = {
 			isa = PBXGroup;
 			children = (
-				34A9F2EB2082AA6000C192B1 /* InfoScreenView.swift */,
-				34A9F2EC2082AA6000C192B1 /* InfoScreenView.xib */,
+				F151FD6C2082ADF90060B32F /* InfoScreenViewController.swift */,
+				F151FD702082B9EA0060B32F /* ScrollLabel.swift */,
+				F151FD722082BF180060B32F /* InfoView.swift */,
+				F151FD742082C8DF0060B32F /* MainInfoView.swift */,
+				F151FD762082E46F0060B32F /* InfoScreen.storyboard */,
 			);
 			path = infoScreen;
 			sourceTree = "<group>";
@@ -420,6 +436,7 @@
 				346B282B207F6F26006F0B96 /* Assets.xcassets */,
 				346B2822207F6F23006F0B96 /* AppDelegate.swift */,
 				346B282D207F6F26006F0B96 /* LaunchScreen.storyboard */,
+				F151FD7D20834D7D0060B32F /* LaunchScreenView.swift */,
 				346B2830207F6F26006F0B96 /* Info.plist */,
 			);
 			path = "support files";
@@ -464,6 +481,15 @@
 				489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F151FD7820832D590060B32F /* gameSummary */ = {
+			isa = PBXGroup;
+			children = (
+				F151FD7920832DAE0060B32F /* PositionView.swift */,
+				F151FD7B208338DA0060B32F /* SummaryView.swift */,
+			);
+			path = gameSummary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,9 +578,9 @@
 				34A9F2F72082AA6000C192B1 /* PlayerView.xib in Resources */,
 				34DC1B542081F8CA00AF0996 /* Localization.strings in Resources */,
 				346B2825207F6F23006F0B96 /* art.scnassets in Resources */,
-				34A9F2F52082AA6000C192B1 /* InfoScreenView.xib in Resources */,
 				346B282F207F6F26006F0B96 /* LaunchScreen.storyboard in Resources */,
 				346B282C207F6F26006F0B96 /* Assets.xcassets in Resources */,
+				F151FD772082E46F0060B32F /* InfoScreen.storyboard in Resources */,
 				346B282A207F6F23006F0B96 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +666,8 @@
 				34F7101E208249EC0094EC9F /* PresentDataPhase.swift in Sources */,
 				34A9F2E42082A9AA00C192B1 /* Int+logarithm.swift in Sources */,
 				34EC6E9220822CCA00DF5087 /* FindCountryPhase.swift in Sources */,
+				F151FD7C208338DA0060B32F /* SummaryView.swift in Sources */,
+				F151FD712082B9EA0060B32F /* ScrollLabel.swift in Sources */,
 				34913BC4207F88660031CD6F /* Country.swift in Sources */,
 				34913BBA207F71FE0031CD6F /* MainViewController.swift in Sources */,
 				34EC6E9620822F3B00DF5087 /* PutWorkersPhase.swift in Sources */,
@@ -651,11 +679,13 @@
 				34A9F2E82082AA0300C192B1 /* DelegateWorkersView.swift in Sources */,
 				34DC1B69208202D500AF0996 /* CountriesHelper.swift in Sources */,
 				34A9F2E72082AA0300C192B1 /* WorkersPicker.swift in Sources */,
+				F151FD6D2082ADF90060B32F /* InfoScreenViewController.swift in Sources */,
 				34A9F2F82082AA6000C192B1 /* PlayersView.swift in Sources */,
 				34EC6E9420822E1C00DF5087 /* MutableGame.swift in Sources */,
 				34A9F2F92082AA6000C192B1 /* MainView.swift in Sources */,
 				34DC1B5B2081FB4A00AF0996 /* Move.swift in Sources */,
 				34913BCD207FA1370031CD6F /* Table.swift in Sources */,
+				F151FD7E20834D7D0060B32F /* LaunchScreenView.swift in Sources */,
 				34EC6E9020822CA500DF5087 /* Phase.swift in Sources */,
 				34DC1B602081FC9F00AF0996 /* OpacityControl.swift in Sources */,
 				34DC1B592081FB3500AF0996 /* Player.swift in Sources */,
@@ -665,9 +695,9 @@
 				34EC6E9A2082336F00DF5087 /* NextPlayerPhase.swift in Sources */,
 				34EC6E98208231B700DF5087 /* QuestionPhase.swift in Sources */,
 				9EE906992082A1EF000D9602 /* BarChartCreator.swift in Sources */,
-				34A9F2F42082AA6000C192B1 /* InfoScreenView.swift in Sources */,
 				9E6F6AA020823F1600635874 /* BarNodeType.swift in Sources */,
 				34913BBD207F723D0031CD6F /* BasicViewController.swift in Sources */,
+				F151FD732082BF180060B32F /* InfoView.swift in Sources */,
 				34DC1B572081FB2300AF0996 /* Game.swift in Sources */,
 				346B2827207F6F23006F0B96 /* ViewController.swift in Sources */,
 				34913BCF207FA2610031CD6F /* Value.swift in Sources */,
@@ -677,7 +707,9 @@
 				34913BC7207F97C10031CD6F /* TableConverter.swift in Sources */,
 				34F7101C208246090094EC9F /* QuestionData.swift in Sources */,
 				34F7101A208240F40094EC9F /* EndGamePhase.swift in Sources */,
+				F151FD7A20832DAE0060B32F /* PositionView.swift in Sources */,
 				34DC1B6B2082074300AF0996 /* SecondPhaseHelper.swift in Sources */,
+				F151FD752082C8DF0060B32F /* MainInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,14 +885,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 775NKU5HEM;
+				DEVELOPMENT_TEAM = 5XQQ8D847B;
 				INFOPLIST_FILE = "$(SRCROOT)/GusGame/support files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameMO;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameTL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -873,14 +905,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 775NKU5HEM;
+				DEVELOPMENT_TEAM = 5XQQ8D847B;
 				INFOPLIST_FILE = "$(SRCROOT)/GusGame/support files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameMO;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.BoroCode.GusGameTL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
