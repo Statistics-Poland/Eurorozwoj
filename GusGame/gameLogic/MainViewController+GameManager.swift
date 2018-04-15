@@ -15,7 +15,7 @@ extension MainViewController: GameManagerDelegate {
         
     }
     func gameManager(_ manager: GameManager, showData: QuestionData, for country: Country) {
-      //  addBarInfos()
+        addBarInfos()
     }
     
     func gameManager(_ manager: GameManager, askQuestionWithData showData: QuestionData, country: Country, player: Player) {

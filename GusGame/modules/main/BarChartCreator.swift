@@ -26,6 +26,11 @@ class BarChartCreator {
         removeBarInfos(parentNode: parentNode)
     }
     
+    func removeBarInfos(parentNode: SCNNode) {
+        let hudNodes = parentNode.childNodes.filter({ $0.name == "HUD" })
+        hudNodes.forEach({ $0.removeFromParentNode()})
+    }
+    
     func addBars(barNodes: [BarNodeType], for countryNode: SCNNode, to parentNode: SCNNode) {
         let position1 = SCNVector3(countryNode.position.x, countryNode.position.y + 0.3, countryNode.position.z)
         addBar(barNode: barNodes[0], at: position1, parentNode: parentNode)
@@ -59,11 +64,6 @@ class BarChartCreator {
         hudNode.position = SCNVector3(x: node.position.x, y: node.position.y + maxHeight, z: node.position.z)
         hudNode.rotation = SCNVector4(x: 1, y: 0, z: 0, w: 3.14159265)
         parentNode.addChildNode(hudNode)
-    }
-    
-    private func removeBarInfos(parentNode: SCNNode) {
-        let hudNodes = parentNode.childNodes.filter({ $0.name == "HUD" })
-        hudNodes.forEach({ $0.removeFromParentNode()})
     }
 
     private func addBar(barNode: BarNodeType, at position: SCNVector3, parentNode: SCNNode) {
