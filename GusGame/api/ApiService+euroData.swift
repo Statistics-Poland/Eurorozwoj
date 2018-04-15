@@ -32,8 +32,18 @@ extension ApiService {
         }
     }
     
+    
+    func getShityData3() -> Promise<Table<Double>> {
+        return request(url: "\(baseUrl)/isoc_ci_ifp_fu?indic_is=I_IDAY&precision=1&unit=PC_IND&ind_type=Y0_15") {
+            (jsonStr: String) -> Table<Double> in
+            var table: Table<Double> = try Table<Double>(JSONString: jsonStr)
+            table.name = "Procentowe użycie internetu przez młodzież i dzieci przed 15 rokiem życia"
+            return table
+        }
+    }
+    
     func getAllShityData() -> Promise<[Table<Double>]> {
-        return when(fulfilled: [getShityData1(), getShityData2()])
+        return when(fulfilled: [getShityData1(), getShityData2(), getShityData3()])
     }
     
     
