@@ -32,7 +32,7 @@ class MainInfoView: BasicView {
         playerSummary.isHidden = true
         
         
-        infoView.scrollLbl.text = instruction
+        infoView.scrollLbl.text = R.string.game_tutorial_text^
         let infoHeight = self.frame.width * 0.75
         let infoWidth = self.frame.height * 0.6
         infoView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

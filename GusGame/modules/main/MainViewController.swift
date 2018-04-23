@@ -58,6 +58,14 @@ class MainViewController: BasicViewController, MainViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("dupa")
+        print(R.string.test^)
+        print(R.plurals.test_plurals[0])
+        print(R.plurals.test_plurals[1])
+        print(R.plurals.test_plurals[2])
+        print(R.string.test_parameters1[1, "Ewa"])
+        print(R.string.test_parameters2[1, "Ewa"])
+        
         sceneView.delegate = self
         sceneView.autoenablesDefaultLighting = true
         sceneView.isUserInteractionEnabled = true

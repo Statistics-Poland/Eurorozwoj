@@ -1,0 +1,41 @@
+﻿<plist version="1.0">
+<dict>
+
+<key>game_delegate_workers_count</key>
+<dict>
+    <key>NSStringLocalizedFormatKey</key>
+    <string>%#@x@</string>
+    <key>x</key>
+    <dict>
+        <key>NSStringFormatSpecTypeKey</key>
+        <string>NSStringPluralRuleType</string>
+        <key>NSStringFormatValueTypeKey</key>
+        <string>d</string>
+        <key>zero</key>
+        <string>Nie posiadasz już pracowników</string>
+        <key>other</key>
+        <string>Posiadasz %d</string>
+    </dict>
+</dict>
+
+<key>test_plurals</key>
+<dict>
+    <key>NSStringLocalizedFormatKey</key>
+    <string>%#@x@</string>
+    <key>x</key>
+    <dict>
+        <key>NSStringFormatSpecTypeKey</key>
+        <string>NSStringPluralRuleType</string>
+        <key>NSStringFormatValueTypeKey</key>
+        <string>d</string>
+        <key>zero</key>
+        <string>brak mango</string>
+        <key>one</key>
+        <string>mango</string>
+        <key>other</key>
+        <string>%d mango</string>
+    </dict>
+</dict>
+
+</dict>
+</plist>

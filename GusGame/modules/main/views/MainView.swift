@@ -21,7 +21,7 @@ class MainView: BasicARView {
         playerView.isUserInteractionEnabled = false
         playerView.alpha = 0.0
         playerView.translatesAutoresizingMaskIntoConstraints = false
-        playerView.scrollLbl.text = instruction
+        playerView.scrollLbl.text = R.string.game_tutorial_text^
         return playerView
     }()
     

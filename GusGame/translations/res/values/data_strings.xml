@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- names of data downloaded from Eurostat. it will be dislpied in question phase -->
+    <string name="data_dataset1_name"> Growth of GDP </string>
+    <string name="data_dataset2_name"> Growth of population </string>
+    
+</resources>
+
+

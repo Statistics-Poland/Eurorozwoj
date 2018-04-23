@@ -7,11 +7,11 @@ extension MainViewController: GameManagerDelegate {
     }
     func gameManager(_ manager: GameManager, enterSelectCountry country: Country, player: Player) {
         addSelectCountryTapGestureToSceneView()
-        sceneView.showTopLbl(withText: "Zaznacz Kraj: \(country)")
+        sceneView.showTopLbl(withText: R.string.game_select_country[country])
         inSelectCountry = true
     }
     func gameManager(invalidCountrySelected manager: GameManager) {
-        sceneView.showTopLbl(withText: "ŹLE!")
+        sceneView.showTopLbl(withText: R.string.game_select_country_invalid^)
         sceneView.layer.add(Animations.shakeAnimation, forKey: "shakeItBycz")
         
     }
@@ -19,7 +19,7 @@ extension MainViewController: GameManagerDelegate {
         print("XDDDDDDDDDD")
         sceneView.hideWorkers()
         addBarInfosWithYears(data: showData.values)
-        sceneView.showBottomBtn(withText: "Zakończ ture")
+        sceneView.showBottomBtn(withText: R.string.game_end_turn_btn^)
         turnEnd = true 
     }
     
@@ -43,11 +43,11 @@ extension MainViewController: GameManagerDelegate {
         print("zmien gracza")
         let alert: UIAlertController = UIAlertController(
             title: nil,
-            message: "Przekaż telefon do \(player.name)",
+            message: R.string.game_change_player_text[player.name],
             preferredStyle: UIAlertControllerStyle.alert
         )
         
-        let cancel: UIAlertAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.cancel) {
+        let cancel: UIAlertAction = UIAlertAction(title: R.string.game_change_confirm_btn^, style: UIAlertActionStyle.cancel) {
             _ -> Void in
             manager.playerWasSwitched()
         }

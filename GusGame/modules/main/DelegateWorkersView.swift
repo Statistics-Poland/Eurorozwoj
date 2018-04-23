@@ -22,7 +22,7 @@ class DelegateWorkersView: BasicView {
         let titleLbl: UILabel = UILabel()
         
         titleLbl.textColor = UIColor.app.black
-        titleLbl.text = "Deleguj pracowników"
+        titleLbl.text = R.string.game_delegate_workers_title^
         titleLbl.font = UIFont.app.standard_21
         titleLbl.textAlignment = NSTextAlignment.center
         
@@ -33,7 +33,7 @@ class DelegateWorkersView: BasicView {
         let workersLbl: UILabel = UILabel()
         
         workersLbl.font = UIFont.app.standard_17
-        workersLbl.text = "Posiadasz 100"
+        workersLbl.text = R.plurals.game_delegate_workers_count[100]
         workersLbl.textColor = UIColor.app.black
         workersLbl.textAlignment = NSTextAlignment.center
         
@@ -41,7 +41,7 @@ class DelegateWorkersView: BasicView {
     }()
     private lazy var btn: TextControl = {
         let btn: TextControl = TextControl()
-        btn.text = "Potwierdź"
+        btn.text = R.string.game_delegate_confirm_btn^
         btn.addTarget(self, action: #selector(korwa), for: UIControlEvents.touchUpInside)
         return btn
     }()
@@ -62,7 +62,7 @@ class DelegateWorkersView: BasicView {
     
     
     func display(player: Player) {
-        workersLbl.text = "Posiadasz \(player.workers)"
+        workersLbl.text = R.plurals.game_delegate_workers_count[player.workers]
         picker.maxNumer = min(player.workers, 20)
         picker.reloadAllComponents()
         picker.restoreSelection(animated: false, selections: [0,0,0,0,0,0,0,0,0,0,0,0])

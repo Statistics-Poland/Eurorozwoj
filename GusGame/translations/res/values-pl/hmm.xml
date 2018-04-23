@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+<!ENTITY hehe "jest ok">
+]>
+<resources>
+    
+    <string name="test_parameters1"> integer %d, napis %s </string>
+    <string name="test_parameters2"> napis %2$s, integer %1$d </string>
+    
+    
+    <string name="test"> test &hehe; </string>
+    
+    
+    <plurals name="test_plurals">
+        <item quantity="zero">brak mango</item>
+        <item quantity="one">mango</item>
+        <item quantity="other">%d mango</item>
+    </plurals>
+</resources>
+

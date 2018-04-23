@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- String in select country phase. %1$s will be replaced with select_country_country_XX -->
+    <string name="game_select_country"> Select %1$s </string>
+    <string name="game_select_country_country_AD"> Andorra </string>
+    <string name="game_select_country_country_AL"> Albania </string>
+    <string name="game_select_country_country_AM"> Armenia </string>
+    <string name="game_select_country_country_AU"> Austria </string>
+    <string name="game_select_country_country_AZ"> Azerbaijan </string>
+    <string name="game_select_country_country_BA"> Bosnia and Herzegovina </string>
+    <string name="game_select_country_country_BE"> Belgium </string>
+    <string name="game_select_country_country_BG"> Bulgaria </string>
+    <string name="game_select_country_country_BY"> Belarus </string>
+    <string name="game_select_country_country_CH"> Switzerland </string>
+    <string name="game_select_country_country_CY"> Cyprus </string>
+    <string name="game_select_country_country_CY"> Czech Republic </string>
+    <string name="game_select_country_country_DE"> Germany </string>
+    <string name="game_select_country_country_DK"> Denmark </string>
+    <string name="game_select_country_country_EE"> Estonia </string>
+    <string name="game_select_country_country_EL"> Greece </string>
+    <string name="game_select_country_country_ES"> Spain </string>
+    <string name="game_select_country_country_FI"> Finland </string>
+    <string name="game_select_country_country_FR"> France </string>
+    <string name="game_select_country_country_GE"> Georgia </string>
+    <string name="game_select_country_country_HR"> Croatia </string>
+    <string name="game_select_country_country_HU"> Hungary </string>
+    <string name="game_select_country_country_IE"> Ireland </string>
+    <string name="game_select_country_country_IS"> Iceland </string>
+    <string name="game_select_country_country_IT"> Italy </string>
+    <string name="game_select_country_country_LI"> Liechtenstein </string>
+    <string name="game_select_country_country_LT"> Lithuania </string>
+    <string name="game_select_country_country_LU"> Luxembourg </string>
+    <string name="game_select_country_country_LV"> Latvia </string>
+    <string name="game_select_country_country_MC"> Monaco </string>
+    <string name="game_select_country_country_MD"> Moldova </string>
+    <string name="game_select_country_country_MK"> RepublicOfMacedonia </string>
+    <string name="game_select_country_country_MT"> Malta </string>
+    <string name="game_select_country_country_NL"> Netherlands </string>
+    <string name="game_select_country_country_NO"> Norway </string>
+    <string name="game_select_country_country_PL"> Poland </string>
+    <string name="game_select_country_country_PT"> Portugal </string>
+    <string name="game_select_country_country_RO"> Romania </string>
+    <string name="game_select_country_country_RS"> Serbia </string>
+    <string name="game_select_country_country_RU"> Russia </string>
+    <string name="game_select_country_country_SE"> Sweden </string>
+    <string name="game_select_country_country_SI"> Slovenia </string>
+    <string name="game_select_country_country_SK"> Slovakia </string>
+    <string name="game_select_country_country_SM"> San Marino </string>
+    <string name="game_select_country_country_TR"> Turkey </string>
+    <string name="game_select_country_country_UA"> Ukraine </string>
+    <string name="game_select_country_country_UK"> United Kingdom </string>
+    <!-- string displied after invalid selection of country -->
+    <string name="game_select_country_invalid"> Wrong country!! </string>
+    <!-- string displied on button at end of turn -->
+    <string name="game_end_turn_btn"> End turn </string>
+    <!-- string displied on change player popup. %1$s will be replaced with player name -->
+    <string name="game_change_player_text"> Pass phone to %1$s </string>
+    <!-- change player popup button text -->
+    <string name="game_change_confirm_btn"> Ok </string>
+    <!-- delegate workers popup title -->
+    <string name="game_delegate_workers_title"> Delegate workers </string>
+    <!-- number of available workers -->
+    <plurals name="game_delegate_workers_count">
+        <item quantity="zero">You don't have any workers</item>
+        <item quantity="other">You have %d</item>
+    </plurals>
+    <!-- delegate workers confirm button text -->
+    <string name="game_delegate_confirm_btn"> Confrim </string>
+    <!-- instructions of the game -->
+    <string name="game_tutorial_text">
+        Zasady gry:\n
+        ▰4 graczy;\n
+        ▰Każdy gracz posiada 100 pracowników;\n
+        ▰6 Rynków(Krajów) do zagospodarowania;\n
+        ▰Każdy z graczy w jednej turze może delegować maksymalnie 20 pracowników;\n
+        ▰ Wygrywa gracz który zajął największą liczbę państw;\n
+        ▰Państwo zajmuje gracz z największą liczbą pracowników na danym terytorium po wszystkich turach.\n
+        ▰Gracze rywalizują pomiędzy sobą w turowym muliplayerze na jedno urządzenie;\n
+        ▰Każdy gracz po delegowaniu pracowników na dane pole otrzymuje do poglądu trzy statystki w formie histogramów oraz nazwę statystyki;\n
+        ▰Następnie zadaniem gracza jest poprawnie określenie lat dla każdego z trzech prostopadłościanów histogramu, czyli danej statystyki i danego państwa;\n
+        ▰Gra toczy się, aż ostatni z graczy wyśle wszystkich swoich pracowników. \n
+        ▰Dodatkowy element służący do nauki na początku każdej tury: \n
+        – wskazanie przez każdego kolejnego gracza rozpoczynającego turę właściwego państwa. \n
+        Ile punktów dostaje gracz:\n
+        ▰Za 3 poprawne odpowiedzi - liczba pracowników razy 2\n
+        ▰Za 1 poprawną odpowiedź - liczba pracowników taka ja wydelegowana na początku\n
+        ▰Za 0 poprawnych odpowiedzi – liczba pracowników zmniejszona o połowę.\n
+    </string>
+    <!-- instructions of the game, close button text -->
+    <string name="game_tutorial_close_btn"> Ok </string>
+    
+</resources>
+

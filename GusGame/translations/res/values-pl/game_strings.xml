@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- Napis w fazie wyskazania kraju. w miejscu %1$s pojawi się select_country_country_PL z opdpwiednim kodem kraju -->
+    <string name="game_select_country"> Zaznacz %1$s </string>
+    <string name="game_select_country_country_AD"> Andorę </string>
+    <string name="game_select_country_country_AL"> Albanię </string>
+    <string name="game_select_country_country_AM"> Armenię </string>
+    <string name="game_select_country_country_AU"> Austrię </string>
+    <string name="game_select_country_country_AZ"> Azerbejdżan </string>
+    <string name="game_select_country_country_BA"> Bośnię i Hercegowinę </string>
+    <string name="game_select_country_country_BE"> Belgię </string>
+    <string name="game_select_country_country_BG"> Bułgarię </string>
+    <string name="game_select_country_country_BY"> Białoruś </string>
+    <string name="game_select_country_country_CH"> Szwajcarię </string>
+    <string name="game_select_country_country_CY"> Cypr </string>
+    <string name="game_select_country_country_CY"> Czechy </string>
+    <string name="game_select_country_country_DE"> Niemcy </string>
+    <string name="game_select_country_country_DK"> Danię </string>
+    <string name="game_select_country_country_EE"> Estonię </string>
+    <string name="game_select_country_country_EL"> Grecję </string>
+    <string name="game_select_country_country_ES"> Hiszpanię </string>
+    <string name="game_select_country_country_FI"> Finlandię </string>
+    <string name="game_select_country_country_FR"> Francję </string>
+    <string name="game_select_country_country_GE"> Georgię </string>
+    <string name="game_select_country_country_HR"> Chorwację </string>
+    <string name="game_select_country_country_HU"> Węgry </string>
+    <string name="game_select_country_country_IE"> Irlandię </string>
+    <string name="game_select_country_country_IS"> Islandię </string>
+    <string name="game_select_country_country_IT"> Włochy </string>
+    <string name="game_select_country_country_LI"> Liechtenstein </string>
+    <string name="game_select_country_country_LT"> Litwę </string>
+    <string name="game_select_country_country_LU"> Luksemburg </string>
+    <string name="game_select_country_country_LV"> Łotwę </string>
+    <string name="game_select_country_country_MC"> Monako </string>
+    <string name="game_select_country_country_MD"> Mołdawię </string>
+    <string name="game_select_country_country_MK"> Macedonię </string>
+    <string name="game_select_country_country_MT"> Maltę </string>
+    <string name="game_select_country_country_NL"> Holandię </string>
+    <string name="game_select_country_country_NO"> Norwegię </string>
+    <string name="game_select_country_country_PL"> Polskę </string>
+    <string name="game_select_country_country_PT"> Portugalię </string>
+    <string name="game_select_country_country_RO"> Rumunię </string>
+    <string name="game_select_country_country_RS"> Serbię </string>
+    <string name="game_select_country_country_RU"> Rosję </string>
+    <string name="game_select_country_country_SE"> Szwecję </string>
+    <string name="game_select_country_country_SI"> Słowenię </string>
+    <string name="game_select_country_country_SK"> Słowację </string>
+    <string name="game_select_country_country_SM"> San Marino </string>
+    <string name="game_select_country_country_TR"> Turcję </string>
+    <string name="game_select_country_country_UA"> Ukrainę </string>
+    <string name="game_select_country_country_UK"> Wielką Brytanię </string>
+    <!-- napis wyświetlany po błędnym wyborze kraju -->
+    <string name="game_select_country_invalid"> Źle!! </string>
+    <!-- napis wyświetlany na guziku pod koniec tury -->
+    <string name="game_end_turn_btn"> Zakończ turę </string>
+    <!-- napis wyświetlany w popupie zmiany gracza. %1$s zostanie zamieniony na imię gracza -->
+    <string name="game_change_player_text"> Przekaż telefon do %1$s </string>
+    <!-- guzik w popupie gracza -->
+    <string name="game_change_confirm_btn"> Ok </string>
+    <!-- tytuł popupu delegacji pracowników -->
+    <string name="game_delegate_workers_title"> Deleguj pracowników </string>
+    <!-- ilość pracowników na popupie delegacji -->
+    <plurals name="game_delegate_workers_count">
+        <item quantity="zero">Nie posiadasz już pracowników</item>
+        <item quantity="other">Posiadasz %d</item>
+    </plurals>
+    <!-- guzik w popupie delegacji pracowników -->
+    <string name="game_delegate_confirm_btn"> Potwierdź </string>
+    <!-- instrukcja do gry -->
+    <string name="game_tutorial_text">
+        Zasady gry:\n
+        ▰4 graczy;\n
+        ▰Każdy gracz posiada 100 pracowników;\n
+        ▰6 Rynków(Krajów) do zagospodarowania;\n
+        ▰Każdy z graczy w jednej turze może delegować maksymalnie 20 pracowników;\n
+        ▰ Wygrywa gracz który zajął największą liczbę państw;\n
+        ▰Państwo zajmuje gracz z największą liczbą pracowników na danym terytorium po wszystkich turach.\n
+        ▰Gracze rywalizują pomiędzy sobą w turowym muliplayerze na jedno urządzenie;\n
+        ▰Każdy gracz po delegowaniu pracowników na dane pole otrzymuje do poglądu trzy statystki w formie histogramów oraz nazwę statystyki;\n
+        ▰Następnie zadaniem gracza jest poprawnie określenie lat dla każdego z trzech prostopadłościanów histogramu, czyli danej statystyki i danego państwa;\n
+        ▰Gra toczy się, aż ostatni z graczy wyśle wszystkich swoich pracowników. \n
+        ▰Dodatkowy element służący do nauki na początku każdej tury: \n
+        – wskazanie przez każdego kolejnego gracza rozpoczynającego turę właściwego państwa. \n
+        Ile punktów dostaje gracz:\n
+        ▰Za 3 poprawne odpowiedzi - liczba pracowników razy 2\n
+        ▰Za 1 poprawną odpowiedź - liczba pracowników taka ja wydelegowana na początku\n
+        ▰Za 0 poprawnych odpowiedzi – liczba pracowników zmniejszona o połowę.\n
+    </string>
+    <!-- guzik zamykający instrukcję -->
+    <string name="game_tutorial_close_btn"> OK </string>
+    
+</resources>
+

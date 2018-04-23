@@ -17,7 +17,7 @@ extension ApiService {
         return request(url: "\(baseUrl)/tec00115?precision=1&na_item=B1GQ&unit=CLV_PCH_PRE") {
             (jsonStr: String) -> Table<Double> in
             var table: Table<Double> = try Table<Double>(JSONString: jsonStr)
-            table.name = "Wzrost PKB"
+            table.name = R.string.data_dataset1_name^
             return table
         }
     }
@@ -27,7 +27,7 @@ extension ApiService {
         return request(url: "\(baseUrl)/demo_gind?precision=1&indic_de=GROW") {
             (jsonStr: String) -> Table<Double> in
             var table: Table<Double> = try Table<Double>(JSONString: jsonStr)
-            table.name = "Przyrost ludności"
+            table.name = R.string.data_dataset2_name^
             return table
         }
     }

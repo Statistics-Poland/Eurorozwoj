@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- nazwy danych pobieranych z Eurostatu. Będą wyświetlanie w fazie pytania -->
+    <string name="data_dataset1_name"> Wzrost PKB </string>
+    <string name="data_dataset2_name"> Przyrost ludności </string>
+    
+</resources>
+
+
