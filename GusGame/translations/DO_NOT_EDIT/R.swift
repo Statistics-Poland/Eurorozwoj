@@ -117,23 +117,25 @@ struct R {
         case game_select_country_invalid
         /// Ok
         case game_tutorial_close_btn
-        /// Zasady gry:
-        ///  ▰4 graczy;
-        ///  ▰Każdy gracz posiada 100 pracowników;
-        ///  ▰6 Rynków(Krajów) do zagospodarowania;
-        ///  ▰Każdy z graczy w jednej turze może delegować maksymalnie 20 pracowników;
-        ///  ▰ Wygrywa gracz który zajął największą liczbę państw;
-        ///  ▰Państwo zajmuje gracz z największą liczbą pracowników na danym terytorium po wszystkich turach.
-        ///  ▰Gracze rywalizują pomiędzy sobą w turowym muliplayerze na jedno urządzenie;
-        ///  ▰Każdy gracz po delegowaniu pracowników na dane pole otrzymuje do poglądu trzy statystki w formie histogramów oraz nazwę statystyki;
-        ///  ▰Następnie zadaniem gracza jest poprawnie określenie lat dla każdego z trzech prostopadłościanów histogramu, czyli danej statystyki i danego państwa;
-        ///  ▰Gra toczy się, aż ostatni z graczy wyśle wszystkich swoich pracowników. 
-        ///  ▰Dodatkowy element służący do nauki na początku każdej tury: 
-        ///  – wskazanie przez każdego kolejnego gracza rozpoczynającego turę właściwego państwa. 
-        ///  Ile punktów dostaje gracz:
-        ///  ▰Za 3 poprawne odpowiedzi - liczba pracowników razy 2
-        ///  ▰Za 1 poprawną odpowiedź - liczba pracowników taka ja wydelegowana na początku
-        ///  ▰Za 0 poprawnych odpowiedzi – liczba pracowników zmniejszona o połowę.
+        /// ▰4 players; 
+        ///  ▰Each player has 100 employees; 
+        ///  ▰6 Rynków (Krajów) to be developed; 
+        ///  ▰Each player may delegate a maximum of 15 employees per turn; 
+        ///  ▰ Chosen people; 
+        ///  ▰Country player player with employee glasses 
+        ///  for this time after all rounds. 
+        ///  ▰ The players compete against each other in turn-based muliplayer on one device; 
+        ///  ▰Each player after delegating employees to the pole field 
+        ///  for goodbye, three statistics in the form of histograms and statistics points; 
+        ///  ▰ Then in the mailbox it is a function of the offer of years for each 
+        ///  from three cubo rectangles, i.e. statistics and state user; 
+        ///  ▰The game goes on until the last player exerts all of its employees. 
+        ///  ▰Additional element for learning at the beginning of each turn 
+        ///  - indication by each beginning of the day. 
+        ///  Multiple points per player: 
+        ///  ▰ For 3 correct answers - number of employees is multiplied by 2. 
+        ///  ▰ For 1 correct answer - the number of employees that I delegated at the beginning 
+        ///  ▰ For 0 correct answers - the number of employees divided by 2. 
         /// 
         case game_tutorial_text
         /// test it's ok

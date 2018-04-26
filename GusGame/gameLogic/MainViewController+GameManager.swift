@@ -7,6 +7,7 @@ extension MainViewController: GameManagerDelegate {
     }
     func gameManager(_ manager: GameManager, enterSelectCountry country: Country, player: Player) {
         addSelectCountryTapGestureToSceneView()
+        
         sceneView.showTopLbl(withText: R.string.game_select_country[country])
         inSelectCountry = true
     }
@@ -65,6 +66,7 @@ extension MainViewController: GameManagerDelegate {
     func gameManager(endTurn manager: GameManager, winners: [Player], country: Country) {
         hideActive(country: country)
         setColor(for: country, color: winners.first?.color ?? UIColor.blue)
+        sceneView.hideBottomBtn()
         isActive = false
     }
     

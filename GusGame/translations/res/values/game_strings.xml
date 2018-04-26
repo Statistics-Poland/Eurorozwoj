@@ -69,23 +69,25 @@
     <string name="game_delegate_confirm_btn"> Confrim </string>
     <!-- instructions of the game -->
     <string name="game_tutorial_text">
-        Zasady gry:\n
-        ▰4 graczy;\n
-        ▰Każdy gracz posiada 100 pracowników;\n
-        ▰6 Rynków(Krajów) do zagospodarowania;\n
-        ▰Każdy z graczy w jednej turze może delegować maksymalnie 20 pracowników;\n
-        ▰ Wygrywa gracz który zajął największą liczbę państw;\n
-        ▰Państwo zajmuje gracz z największą liczbą pracowników na danym terytorium po wszystkich turach.\n
-        ▰Gracze rywalizują pomiędzy sobą w turowym muliplayerze na jedno urządzenie;\n
-        ▰Każdy gracz po delegowaniu pracowników na dane pole otrzymuje do poglądu trzy statystki w formie histogramów oraz nazwę statystyki;\n
-        ▰Następnie zadaniem gracza jest poprawnie określenie lat dla każdego z trzech prostopadłościanów histogramu, czyli danej statystyki i danego państwa;\n
-        ▰Gra toczy się, aż ostatni z graczy wyśle wszystkich swoich pracowników. \n
-        ▰Dodatkowy element służący do nauki na początku każdej tury: \n
-        – wskazanie przez każdego kolejnego gracza rozpoczynającego turę właściwego państwa. \n
-        Ile punktów dostaje gracz:\n
-        ▰Za 3 poprawne odpowiedzi - liczba pracowników razy 2\n
-        ▰Za 1 poprawną odpowiedź - liczba pracowników taka ja wydelegowana na początku\n
-        ▰Za 0 poprawnych odpowiedzi – liczba pracowników zmniejszona o połowę.\n
+        ▰4 players; \n
+        ▰Each player has 100 employees; \n
+        ▰6 Rynków (Krajów) to be developed; \n
+        ▰Each player may delegate a maximum of 15 employees per turn; \n
+        ▰ Chosen people; \n
+        ▰Country player player with employee glasses \n
+        for this time after all rounds. \n
+        ▰ The players compete against each other in turn-based muliplayer on one device; \n
+        ▰Each player after delegating employees to the pole field \n
+        for goodbye, three statistics in the form of histograms and statistics points; \n
+        ▰ Then in the mailbox it is a function of the offer of years for each \n
+        from three cubo rectangles, i.e. statistics and state user; \n
+        ▰The game goes on until the last player exerts all of its employees. \n
+        ▰Additional element for learning at the beginning of each turn \n
+        - indication by each beginning of the day. \n
+        Multiple points per player: \n
+        ▰ For 3 correct answers - number of employees is multiplied by 2. \n
+        ▰ For 1 correct answer - the number of employees that I delegated at the beginning \n
+        ▰ For 0 correct answers - the number of employees divided by 2. \n
     </string>
     <!-- instructions of the game, close button text -->
     <string name="game_tutorial_close_btn"> Ok </string>

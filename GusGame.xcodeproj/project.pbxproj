@@ -56,6 +56,7 @@
 		34F7101A208240F40094EC9F /* EndGamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F71019208240F40094EC9F /* EndGamePhase.swift */; };
 		34F7101C208246090094EC9F /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F7101B208246080094EC9F /* QuestionData.swift */; };
 		34F7101E208249EC0094EC9F /* PresentDataPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F7101D208249EC0094EC9F /* PresentDataPhase.swift */; };
+		34FBF00920925E0000E2B6D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34FBF00B20925E0000E2B6D3 /* InfoPlist.strings */; };
 		680D797BB9D373902CB0EF32 /* Pods_GusGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */; };
 		9E6F6A9E2082167100635874 /* float4x4 Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9D2082167100635874 /* float4x4 Extension.swift */; };
 		9E6F6AA020823F1600635874 /* BarNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6F6A9F20823F1600635874 /* BarNodeType.swift */; };
@@ -155,6 +156,8 @@
 		34F71019208240F40094EC9F /* EndGamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGamePhase.swift; sourceTree = "<group>"; };
 		34F7101B208246080094EC9F /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 		34F7101D208249EC0094EC9F /* PresentDataPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDataPhase.swift; sourceTree = "<group>"; };
+		34FBF00A20925E0000E2B6D3 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		34FBF00C20925E0200E2B6D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		489FE0B3EB54705685ED01BC /* Pods_GusGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GusGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C831D4C968E17BE88CD983C /* Pods-GusGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		805215B825499F75CEE9BDA6 /* Pods-GusGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GusGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GusGameTests/Pods-GusGameTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -364,6 +367,7 @@
 				34EBF208208DD0CD005FEFF4 /* DO_NOT_EDIT */,
 				34EBF206208DD0CD005FEFF4 /* res */,
 				34EBF216208DD36C005FEFF4 /* R_extensions.swift */,
+				34FBF00B20925E0000E2B6D3 /* InfoPlist.strings */,
 			);
 			path = translations;
 			sourceTree = "<group>";
@@ -701,6 +705,7 @@
 				346B282F207F6F26006F0B96 /* LaunchScreen.storyboard in Resources */,
 				346B282C207F6F26006F0B96 /* Assets.xcassets in Resources */,
 				F151FD8D2083762B0060B32F /* Storyboard.storyboard in Resources */,
+				34FBF00920925E0000E2B6D3 /* InfoPlist.strings in Resources */,
 				346B282A207F6F23006F0B96 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -894,6 +899,15 @@
 				34EBF22D208DD6EC005FEFF4 /* pl */,
 			);
 			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		34FBF00B20925E0000E2B6D3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34FBF00A20925E0000E2B6D3 /* pl */,
+				34FBF00C20925E0200E2B6D3 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
