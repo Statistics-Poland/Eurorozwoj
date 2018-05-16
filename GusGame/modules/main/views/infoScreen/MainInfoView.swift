@@ -15,8 +15,7 @@ class MainInfoView: BasicView {
     
     let infoView: InfoView = InfoView()
     
-//    let playerSummary: PositionView = PositionView()
-        let playerSummary: SummaryView = SummaryView()
+    let playerSummary: SummaryView = SummaryView()
     
     let players: PlayersView = PlayersView()
     
@@ -44,7 +43,6 @@ class MainInfoView: BasicView {
         playerSummary.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         playerSummary.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         playerSummary.heightAnchor.constraint(equalToConstant: 200).isActive = true
-//        playerSummary.widthAnchor.constraint(equalToConstant: 200).isActive = true
 
         layoutIfNeeded()
         

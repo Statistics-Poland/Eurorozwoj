@@ -106,7 +106,8 @@ class MainView: BasicARView {
         setupnfoinconConstraints()
         
         bottomBtn.addTarget(self, action: #selector(btnHandler), for: UIControlEvents.touchUpInside)
-        info.addTarget(self, action: #selector(showInfo), for: UIControlEvents.touchUpInside)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showInfo))
+        info.addGestureRecognizer(tap)
         workersView.delegate = self
     }
     

@@ -15,7 +15,6 @@ class InfoView: BasicView {
         let button: TextControl = TextControl()
         button.backgroundColor = .clear
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(dismissView), for: UIControlEvents.touchUpInside)
         button.text = R.string.game_tutorial_close_btn^
         
         return button
@@ -35,8 +34,10 @@ class InfoView: BasicView {
                        animations: {
                         self.alpha = 0.0
                         self.transform = CGAffineTransform(scaleX: 0.3, y: 0.3) },
-                       completion: {_ in self.removeFromSuperview()})
-        
+                       completion: {_ in
+                        self.transform = CGAffineTransform.identity
+                        self.isUserInteractionEnabled = false
+        } )
     }
     
     override func initialize() {
@@ -47,6 +48,8 @@ class InfoView: BasicView {
         addScrollLblConstraints()
         setView()
         popAnimation()
+        
+        addGesture()
     }
     
     func setView() {
@@ -55,6 +58,11 @@ class InfoView: BasicView {
         self.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
         self.alpha = 0.0
         self.isHidden = true
+    }
+    
+    func addGesture() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+        self.addGestureRecognizer(tap)
     }
     
     func addScrollLblConstraints () {
