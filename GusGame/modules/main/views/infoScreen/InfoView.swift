@@ -62,7 +62,7 @@ class InfoView: BasicView {
     
     func addGesture() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissView))
-        self.addGestureRecognizer(tap)
+        button.addGestureRecognizer(tap)
     }
     
     func addScrollLblConstraints () {

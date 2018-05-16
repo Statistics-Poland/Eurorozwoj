@@ -147,8 +147,6 @@ class PlayersView: BasicView {
 }
 extension PlayersView: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        print("players view gesture delegate")
-        print(gestureRecognizer.name)
         if gestureRecognizer.name == swipeDownGesture /*&& otherGestureRecognizer.name !=  arrowTapName*/ {
             return true
             } else {
