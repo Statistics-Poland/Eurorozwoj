@@ -2,7 +2,7 @@
 
 Prototype of Augmented Reality game created during 24-hours hackathon "ShowMeData" organised by GUS (Główny Urząd Statystyczny) / Statistics Poland (see: https://hackathon.stat.gov.pl/).
 
-The game do not reqiuer any special marker - when your camera detects any flat surfece the augmented reality map will be displayed.
+The game do not require any special marker - when your camera detects any flat surface the augmented reality map will be displayed.
 
 ## DESCRIPTION OF THE GAME
 Game rules:
